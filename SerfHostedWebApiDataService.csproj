@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2E9F373-300F-401F-8C3F-C58D57392655}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SelfHostedWebApiDataService</RootNamespace>
+    <AssemblyName>SelfHostedWebApiDataService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Data.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Persistent.Base.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Persistent.BaseImpl.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Xpo.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Diagnostics, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Diagnostics.3.0.1\lib\net45\Microsoft.Owin.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\Microsoft.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Nancy.1.2.0\lib\net40\Nancy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy.Owin, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Nancy.Owin.1.2.0\lib\net40\Nancy.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.OData, Version=5.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.OData.5.9.0\lib\net45\System.Web.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=3.2.150.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>packages\Topshelf.3.2.0\lib\net40-full\Topshelf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalyticalMethod.cs" />
+    <Compile Include="BusinessEntity.cs" />
+    <Compile Include="BusinessFunction.cs" />
+    <Compile Include="BusinessGoal.cs" />
+    <Compile Include="BusinessInitiative.cs" />
+    <Compile Include="BusinessQuestion.cs" />
+    <Compile Include="Controllers\SubjectAreaController.cs" />
+    <Compile Include="CustomContentTypeProvider.cs" />
+    <Compile Include="CustomMiddleware.cs" />
+    <Compile Include="C__MigrationHistory.cs" />
+    <Compile Include="DataAttribute.cs" />
+    <Compile Include="DataDeliveryMethod.cs" />
+    <Compile Include="DataEntity.cs" />
+    <Compile Include="DataLoadMap.cs" />
+    <Compile Include="DataSource.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="FileData.cs" />
+    <Compile Include="Governance.cs" />
+    <Compile Include="HCategory.cs" />
+    <Compile Include="InformationProduct.cs" />
+    <Compile Include="MasterData.cs" />
+    <Compile Include="Model1.cs" />
+    <Compile Include="ModelDifference.cs" />
+    <Compile Include="ModelDifferenceAspect.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Analysis.cs" />
+    <Compile Include="Models\AnalyticalMethod.cs" />
+    <Compile Include="Models\Attribute.cs" />
+    <Compile Include="Models\BusinessFunction.cs" />
+    <Compile Include="Models\BusinessGoal.cs" />
+    <Compile Include="Models\BusinessGoalAssociatedBusinessGoals_BusinessFunctionAssociatedBusinessFunctions.cs" />
+    <Compile Include="Models\BusinessInitiative.cs" />
+    <Compile Include="Models\BusinessInitiativeBusinessGoalInitiative_BusinessGoalBusinessInitiativeGoals.cs" />
+    <Compile Include="Models\BusinessInitiativeSponsoredInitiatives_BusinessFunctionSponsoredByBusinessFunction.cs" />
+    <Compile Include="Models\BusinessQuestion.cs" />
+    <Compile Include="Models\BusinessQuestionAssociatedBusinessQuestions_BusinessFunctionAssociatedBusinessFunctions.cs" />
+    <Compile Include="Models\BusinessQuestionRelatedBusinessQuestions_BusinessGoalRelatedSubjectGoals.cs" />
+    <Compile Include="Models\DataDeliveryActivity.cs" />
+    <Compile Include="Models\DataDeliveryChannel.cs" />
+    <Compile Include="Models\DataDeliveryChannelBusinessGoalDataDeliveryChannels_BusinessGoalDataDeliveryChannelBusinessGoals.cs" />
+    <Compile Include="Models\DataDeliveryMethod.cs" />
+    <Compile Include="Models\DataDeliveryMethodDataDeliveryMethods_DataDeliveryChannelMethodsDeliveryChannel.cs" />
+    <Compile Include="Models\DataDictionaryItem.cs" />
+    <Compile Include="Models\DataDiscoveryMethod.cs" />
+    <Compile Include="Models\DataExplorerContext.cs" />
+    <Compile Include="Models\DataFormat.cs" />
+    <Compile Include="Models\DataFormatChannelDataFormats_DataDeliveryChannelDataFormatChannels.cs" />
+    <Compile Include="Models\DataLoadMap.cs" />
+    <Compile Include="Models\DataSource.cs" />
+    <Compile Include="Models\DataSourceChannelDataSources_DataDeliveryChannelDeliveredThroughChannels.cs" />
+    <Compile Include="Models\DataSourceDataSourcesWhichSupportThisAccount_AccountAccountsSupportedByThisDataSource.cs" />
+    <Compile Include="Models\DataTable.cs" />
+    <Compile Include="Models\DataTableAssociatedDataTables_DataDictionaryItemAssociatedDataDictionaryItems.cs" />
+    <Compile Include="Models\DataTableAssociatedDataTables_DataSourceAssociatedDataSources.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeAssociatedEmployees_BusinessFunctionAssociatedBusinessFcuntions.cs" />
+    <Compile Include="Models\EmployeeBusinessInitiativeOwner_BusinessInitiativeOwnsBusinessInitiatives.cs" />
+    <Compile Include="Models\EmployeeDataSourceOwners_DataSourceOwnsDatasources.cs" />
+    <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\EntityAssociatedEntities_DataTableAssociatedDataTables.cs" />
+    <Compile Include="Models\EntityAttributeEntities_AttributeEntityAttributes.cs" />
+    <Compile Include="Models\EntityEntitiesRelyingOnThisDataSource_DataSourceEntityDataSources.cs" />
+    <Compile Include="Models\EntityOwnedEntities_EmployeeEntityOwners.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\FieldMap.cs" />
+    <Compile Include="Models\FileData.cs" />
+    <Compile Include="Models\GambiTool.cs" />
+    <Compile Include="Models\GambiToolOwnsGambiTools_EmployeeToolOwners.cs" />
+    <Compile Include="Models\GambiToolSupportedByGambiTools_BusinessInitiativeSupportsBusinessInitiatives.cs" />
+    <Compile Include="Models\GambiToolSupportedGambiTools_DataSourceSupportingDataSources.cs" />
+    <Compile Include="Models\GambiToolUsedInGambiTools_EntityReliesOnEntities.cs" />
+    <Compile Include="Models\Governance.cs" />
+    <Compile Include="Models\GovernanceBusinessInitiativeGovernance_BusinessInitiativeGovernedBusinessInitiatives.cs" />
+    <Compile Include="Models\GovernanceGovernedBy_BusinessFunctionGovernedBusinessFunctions.cs" />
+    <Compile Include="Models\GovernanceGovernsOver_EmployeeGoverningEmployees.cs" />
+    <Compile Include="Models\HCategory.cs" />
+    <Compile Include="Models\InformationComponent.cs" />
+    <Compile Include="Models\InformationComponentRelatedInformationComponents_EntityRelatedEntities.cs" />
+    <Compile Include="Models\KpiDefinition.cs" />
+    <Compile Include="Models\KpiHistoryItem.cs" />
+    <Compile Include="Models\KpiInstance.cs" />
+    <Compile Include="Models\KpiScorecard.cs" />
+    <Compile Include="Models\KpiScorecardScorecards_KpiInstanceIndicators.cs" />
+    <Compile Include="Models\Mapping\AccountMap.cs" />
+    <Compile Include="Models\Mapping\AnalysisMap.cs" />
+    <Compile Include="Models\Mapping\AnalyticalMethodMap.cs" />
+    <Compile Include="Models\Mapping\AttributeMap.cs" />
+    <Compile Include="Models\Mapping\BusinessFunctionMap.cs" />
+    <Compile Include="Models\Mapping\BusinessGoalAssociatedBusinessGoals_BusinessFunctionAssociatedBusinessFunctionsMap.cs" />
+    <Compile Include="Models\Mapping\BusinessGoalMap.cs" />
+    <Compile Include="Models\Mapping\BusinessInitiativeBusinessGoalInitiative_BusinessGoalBusinessInitiativeGoalsMap.cs" />
+    <Compile Include="Models\Mapping\BusinessInitiativeMap.cs" />
+    <Compile Include="Models\Mapping\BusinessInitiativeSponsoredInitiatives_BusinessFunctionSponsoredByBusinessFunctionMap.cs" />
+    <Compile Include="Models\Mapping\BusinessQuestionAssociatedBusinessQuestions_BusinessFunctionAssociatedBusinessFunctionsMap.cs" />
+    <Compile Include="Models\Mapping\BusinessQuestionMap.cs" />
+    <Compile Include="Models\Mapping\BusinessQuestionRelatedBusinessQuestions_BusinessGoalRelatedSubjectGoalsMap.cs" />
+    <Compile Include="Models\Mapping\DataDeliveryActivityMap.cs" />
+    <Compile Include="Models\Mapping\DataDeliveryChannelBusinessGoalDataDeliveryChannels_BusinessGoalDataDeliveryChannelBusinessGoalsMap.cs" />
+    <Compile Include="Models\Mapping\DataDeliveryChannelMap.cs" />
+    <Compile Include="Models\Mapping\DataDeliveryMethodDataDeliveryMethods_DataDeliveryChannelMethodsDeliveryChannelMap.cs" />
+    <Compile Include="Models\Mapping\DataDeliveryMethodMap.cs" />
+    <Compile Include="Models\Mapping\DataDictionaryItemMap.cs" />
+    <Compile Include="Models\Mapping\DataDiscoveryMethodMap.cs" />
+    <Compile Include="Models\Mapping\DataFormatChannelDataFormats_DataDeliveryChannelDataFormatChannelsMap.cs" />
+    <Compile Include="Models\Mapping\DataFormatMap.cs" />
+    <Compile Include="Models\Mapping\DataLoadMapMap.cs" />
+    <Compile Include="Models\Mapping\DataSourceChannelDataSources_DataDeliveryChannelDeliveredThroughChannelsMap.cs" />
+    <Compile Include="Models\Mapping\DataSourceDataSourcesWhichSupportThisAccount_AccountAccountsSupportedByThisDataSourceMap.cs" />
+    <Compile Include="Models\Mapping\DataSourceMap.cs" />
+    <Compile Include="Models\Mapping\DataTableAssociatedDataTables_DataDictionaryItemAssociatedDataDictionaryItemsMap.cs" />
+    <Compile Include="Models\Mapping\DataTableAssociatedDataTables_DataSourceAssociatedDataSourcesMap.cs" />
+    <Compile Include="Models\Mapping\DataTableMap.cs" />
+    <Compile Include="Models\Mapping\EmployeeAssociatedEmployees_BusinessFunctionAssociatedBusinessFcuntionsMap.cs" />
+    <Compile Include="Models\Mapping\EmployeeBusinessInitiativeOwner_BusinessInitiativeOwnsBusinessInitiativesMap.cs" />
+    <Compile Include="Models\Mapping\EmployeeDataSourceOwners_DataSourceOwnsDatasourcesMap.cs" />
+    <Compile Include="Models\Mapping\EmployeeMap.cs" />
+    <Compile Include="Models\Mapping\EntityAssociatedEntities_DataTableAssociatedDataTablesMap.cs" />
+    <Compile Include="Models\Mapping\EntityAttributeEntities_AttributeEntityAttributesMap.cs" />
+    <Compile Include="Models\Mapping\EntityEntitiesRelyingOnThisDataSource_DataSourceEntityDataSourcesMap.cs" />
+    <Compile Include="Models\Mapping\EntityMap.cs" />
+    <Compile Include="Models\Mapping\EntityOwnedEntities_EmployeeEntityOwnersMap.cs" />
+    <Compile Include="Models\Mapping\EventMap.cs" />
+    <Compile Include="Models\Mapping\FieldMapMap.cs" />
+    <Compile Include="Models\Mapping\FileDataMap.cs" />
+    <Compile Include="Models\Mapping\GambiToolMap.cs" />
+    <Compile Include="Models\Mapping\GambiToolOwnsGambiTools_EmployeeToolOwnersMap.cs" />
+    <Compile Include="Models\Mapping\GambiToolSupportedByGambiTools_BusinessInitiativeSupportsBusinessInitiativesMap.cs" />
+    <Compile Include="Models\Mapping\GambiToolSupportedGambiTools_DataSourceSupportingDataSourcesMap.cs" />
+    <Compile Include="Models\Mapping\GambiToolUsedInGambiTools_EntityReliesOnEntitiesMap.cs" />
+    <Compile Include="Models\Mapping\GovernanceBusinessInitiativeGovernance_BusinessInitiativeGovernedBusinessInitiativesMap.cs" />
+    <Compile Include="Models\Mapping\GovernanceGovernedBy_BusinessFunctionGovernedBusinessFunctionsMap.cs" />
+    <Compile Include="Models\Mapping\GovernanceGovernsOver_EmployeeGoverningEmployeesMap.cs" />
+    <Compile Include="Models\Mapping\GovernanceMap.cs" />
+    <Compile Include="Models\Mapping\HCategoryMap.cs" />
+    <Compile Include="Models\Mapping\InformationComponentMap.cs" />
+    <Compile Include="Models\Mapping\InformationComponentRelatedInformationComponents_EntityRelatedEntitiesMap.cs" />
+    <Compile Include="Models\Mapping\KpiDefinitionMap.cs" />
+    <Compile Include="Models\Mapping\KpiHistoryItemMap.cs" />
+    <Compile Include="Models\Mapping\KpiInstanceMap.cs" />
+    <Compile Include="Models\Mapping\KpiScorecardMap.cs" />
+    <Compile Include="Models\Mapping\KpiScorecardScorecards_KpiInstanceIndicatorsMap.cs" />
+    <Compile Include="Models\Mapping\MasterDataAssociatedMasterData_DataSourceAssociatedDataSourcesMap.cs" />
+    <Compile Include="Models\Mapping\MasterDataAssociatedMasterData_DataTableAssociatedDataTablesMap.cs" />
+    <Compile Include="Models\Mapping\MasterDataAssociatedMasterData_EntityAssociatedEntitiesMap.cs" />
+    <Compile Include="Models\Mapping\MasterDataAssociatedMasterData_GambiToolAssociatedGambiToolsMap.cs" />
+    <Compile Include="Models\Mapping\MasterDataMap.cs" />
+    <Compile Include="Models\Mapping\MetricCalculationMap.cs" />
+    <Compile Include="Models\Mapping\MetricMockupMap.cs" />
+    <Compile Include="Models\Mapping\ModuleInfoMap.cs" />
+    <Compile Include="Models\Mapping\ObjectFieldMap.cs" />
+    <Compile Include="Models\Mapping\PerformanceMetricBusinessGoalPerformanceMetrics_BusinessGoalPerformanceMetricsBusinessGoalMap.cs" />
+    <Compile Include="Models\Mapping\PerformanceMetricBusinessInitiativePerformanceMetrics_BusinessInitiativePerformanceMetricBusinessInitiativesMap.cs" />
+    <Compile Include="Models\Mapping\PerformanceMetricDataDiscoveryMethodPerformanceMetrics_DataDiscoveryMethodPerformanceMetricsDataDiscoveryMethodsMap.cs" />
+    <Compile Include="Models\Mapping\PerformanceMetricMap.cs" />
+    <Compile Include="Models\Mapping\PerformanceMetricMetricSupportedByThisCalculation_MetricCalculationPerformanceMetricCalculationsMap.cs" />
+    <Compile Include="Models\Mapping\PerformanceMetricMockupForMetric_MetricMockupMetricMockupsMap.cs" />
+    <Compile Include="Models\Mapping\PerformanceMetricRelatedPerformanceMetrics_AnalyticalMethodRelatedAnalythicalMethodsMap.cs" />
+    <Compile Include="Models\Mapping\PerformanceMetricRelatedPerformanceMetrics_BusinessQuestionRelatedBusinessQuestionsMap.cs" />
+    <Compile Include="Models\Mapping\PerformanceMetricTrackingMethodMap.cs" />
+    <Compile Include="Models\Mapping\PerformanceMetricTrackingMethodPerformanceMetricsTrackingMethods_PerformanceMetricPerformanceMetricBeingTrackedMap.cs" />
+    <Compile Include="Models\Mapping\ReportDataV2Map.cs" />
+    <Compile Include="Models\Mapping\ResourceMap.cs" />
+    <Compile Include="Models\Mapping\ResourceResources_EventEventsMap.cs" />
+    <Compile Include="Models\Mapping\SalesforcePipelineMap.cs" />
+    <Compile Include="Models\Mapping\SecuritySystemMemberPermissionsObjectMap.cs" />
+    <Compile Include="Models\Mapping\SecuritySystemObjectPermissionsObjectMap.cs" />
+    <Compile Include="Models\Mapping\SecuritySystemRoleMap.cs" />
+    <Compile Include="Models\Mapping\SecuritySystemRoleParentRoles_SecuritySystemRoleChildRolesMap.cs" />
+    <Compile Include="Models\Mapping\SecuritySystemTypePermissionsObjectMap.cs" />
+    <Compile Include="Models\Mapping\SecuritySystemUserMap.cs" />
+    <Compile Include="Models\Mapping\SecuritySystemUserUsers_SecuritySystemRoleRolesMap.cs" />
+    <Compile Include="Models\Mapping\SubjectAreaAssociatedSubjectAreas_BusinessFunctionAssociatedBusinessFunctionsMap.cs" />
+    <Compile Include="Models\Mapping\SubjectAreaBusinessInitiativeSubjectAreas_BusinessInitiativeSubjectAreaBusinessInitiativesMap.cs" />
+    <Compile Include="Models\Mapping\SubjectAreaEntitySubjectAreas_EntitySubjectAreaEntitiesMap.cs" />
+    <Compile Include="Models\Mapping\SubjectAreaGovernedSubjectAreas_GovernanceGovernedByMap.cs" />
+    <Compile Include="Models\Mapping\SubjectAreaInformationComponentsSubjectArea_InformationComponentSubjectAreaInformationComponentsMap.cs" />
+    <Compile Include="Models\Mapping\SubjectAreaMap.cs" />
+    <Compile Include="Models\Mapping\SubjectAreaRelatedSubjectAreas_BusinessQuestionRelatedBusinessQuestionsMap.cs" />
+    <Compile Include="Models\Mapping\SynonimEntitySynonims_EntitySynonimEntitiesMap.cs" />
+    <Compile Include="Models\Mapping\SynonimMap.cs" />
+    <Compile Include="Models\Mapping\XPObjectTypeMap.cs" />
+    <Compile Include="Models\MasterData.cs" />
+    <Compile Include="Models\MasterDataAssociatedMasterData_DataSourceAssociatedDataSources.cs" />
+    <Compile Include="Models\MasterDataAssociatedMasterData_DataTableAssociatedDataTables.cs" />
+    <Compile Include="Models\MasterDataAssociatedMasterData_EntityAssociatedEntities.cs" />
+    <Compile Include="Models\MasterDataAssociatedMasterData_GambiToolAssociatedGambiTools.cs" />
+    <Compile Include="Models\MetricCalculation.cs" />
+    <Compile Include="Models\MetricMockup.cs" />
+    <Compile Include="Models\ModuleInfo.cs" />
+    <Compile Include="Models\ObjectField.cs" />
+    <Compile Include="Models\PerformanceMetric.cs" />
+    <Compile Include="Models\PerformanceMetricBusinessGoalPerformanceMetrics_BusinessGoalPerformanceMetricsBusinessGoal.cs" />
+    <Compile Include="Models\PerformanceMetricBusinessInitiativePerformanceMetrics_BusinessInitiativePerformanceMetricBusinessInitiatives.cs" />
+    <Compile Include="Models\PerformanceMetricDataDiscoveryMethodPerformanceMetrics_DataDiscoveryMethodPerformanceMetricsDataDiscoveryMethods.cs" />
+    <Compile Include="Models\PerformanceMetricMetricSupportedByThisCalculation_MetricCalculationPerformanceMetricCalculations.cs" />
+    <Compile Include="Models\PerformanceMetricMockupForMetric_MetricMockupMetricMockups.cs" />
+    <Compile Include="Models\PerformanceMetricRelatedPerformanceMetrics_AnalyticalMethodRelatedAnalythicalMethods.cs" />
+    <Compile Include="Models\PerformanceMetricRelatedPerformanceMetrics_BusinessQuestionRelatedBusinessQuestions.cs" />
+    <Compile Include="Models\PerformanceMetricTrackingMethod.cs" />
+    <Compile Include="Models\PerformanceMetricTrackingMethodPerformanceMetricsTrackingMethods_PerformanceMetricPerformanceMetricBeingTracked.cs" />
+    <Compile Include="Models\ReportDataV2.cs" />
+    <Compile Include="Models\Resource.cs" />
+    <Compile Include="Models\ResourceResources_EventEvents.cs" />
+    <Compile Include="Models\SalesforcePipeline.cs" />
+    <Compile Include="Models\SecuritySystemMemberPermissionsObject.cs" />
+    <Compile Include="Models\SecuritySystemObjectPermissionsObject.cs" />
+    <Compile Include="Models\SecuritySystemRole.cs" />
+    <Compile Include="Models\SecuritySystemRoleParentRoles_SecuritySystemRoleChildRoles.cs" />
+    <Compile Include="Models\SecuritySystemTypePermissionsObject.cs" />
+    <Compile Include="Models\SecuritySystemUser.cs" />
+    <Compile Include="Models\SecuritySystemUserUsers_SecuritySystemRoleRoles.cs" />
+    <Compile Include="Models\SubjectArea.cs" />
+    <Compile Include="Models\SubjectAreaAssociatedSubjectAreas_BusinessFunctionAssociatedBusinessFunctions.cs" />
+    <Compile Include="Models\SubjectAreaBusinessInitiativeSubjectAreas_BusinessInitiativeSubjectAreaBusinessInitiatives.cs" />
+    <Compile Include="Models\SubjectAreaEntitySubjectAreas_EntitySubjectAreaEntities.cs" />
+    <Compile Include="Models\SubjectAreaGovernedSubjectAreas_GovernanceGovernedBy.cs" />
+    <Compile Include="Models\SubjectAreaInformationComponentsSubjectArea_InformationComponentSubjectAreaInformationComponents.cs" />
+    <Compile Include="Models\SubjectAreaRelatedSubjectAreas_BusinessQuestionRelatedBusinessQuestions.cs" />
+    <Compile Include="Models\Synonim.cs" />
+    <Compile Include="Models\SynonimEntitySynonims_EntitySynonimEntities.cs" />
+    <Compile Include="Models\XPObjectType.cs" />
+    <Compile Include="ModuleInfo.cs" />
+    <Compile Include="PerformanceMetric.cs" />
+    <Compile Include="ReportDataV2.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="SecuritySystemMemberPermissionsObject.cs" />
+    <Compile Include="SecuritySystemObjectPermissionsObject.cs" />
+    <Compile Include="SourceTool.cs" />
+    <Compile Include="SubjectArea.cs" />
+    <Compile Include="TestController.cs" />
+    <Compile Include="DemoController.cs" />
+    <Compile Include="NancyDemo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelfHostServiceBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SelfHostServiceBase.Designer.cs">
+      <DependentUpon>SelfHostServiceBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="TopshelfService.cs" />
+    <Compile Include="TypePermissionObject.cs" />
+    <Compile Include="Udm.cs" />
+    <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Assets\data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\testfile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="InstallationDummyFile.txt" />
+    <Content Include="NewFile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,68 @@
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\AspNetSelfHostDemo.exe.config
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Assets\testfile.txt
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Assets\data.json
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\AspNetSelfHostDemo.exe
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\AspNetSelfHostDemo.pdb
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Diagnostics.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.FileSystems.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Hosting.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.StaticFiles.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Nancy.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Nancy.Owin.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Newtonsoft.Json.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Owin.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Net.Http.Formatting.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Web.Http.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Web.Http.Owin.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Topshelf.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Diagnostics.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.FileSystems.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Hosting.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.StaticFiles.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Nancy.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Nancy.Owin.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Newtonsoft.Json.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Net.Http.Formatting.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Web.Http.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Web.Http.Owin.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\obj\Debug\AspNetSelfHostDemo.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\obj\Debug\AspNetSelfHostDemo.exe
+\\Mac\Home\Documents\Visual Studio 2015\Projects\AspNetSelfHostDemo-master\src\obj\Debug\AspNetSelfHostDemo.pdb
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Assets\testfile.txt
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Assets\data.json
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\AspNetSelfHostDemo.exe.config
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\AspNetSelfHostDemo.exe
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\AspNetSelfHostDemo.pdb
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Diagnostics.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.FileSystems.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Hosting.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.StaticFiles.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Nancy.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Nancy.Owin.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Owin.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Net.Http.Formatting.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Web.Http.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Web.Http.Owin.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Topshelf.dll
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.xml
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Diagnostics.xml
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.FileSystems.xml
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.Hosting.xml
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Microsoft.Owin.StaticFiles.xml
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Nancy.xml
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Nancy.Owin.xml
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Net.Http.Formatting.xml
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Web.Http.xml
+C:\Projects\AspNetSelfHostDemo-master\src\bin\Debug\System.Web.Http.Owin.xml
+C:\Projects\AspNetSelfHostDemo-master\src\obj\Debug\AspNetSelfHostDemo.csprojResolveAssemblyReference.cache
+C:\Projects\AspNetSelfHostDemo-master\src\obj\Debug\AspNetSelfHostDemo.exe
+C:\Projects\AspNetSelfHostDemo-master\src\obj\Debug\AspNetSelfHostDemo.pdb
