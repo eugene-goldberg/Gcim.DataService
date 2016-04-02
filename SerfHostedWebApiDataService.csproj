@@ -177,6 +177,8 @@
     <Compile Include="BusinessGoal.cs" />
     <Compile Include="BusinessInitiative.cs" />
     <Compile Include="BusinessQuestion.cs" />
+    <Compile Include="Controllers\BusinessEntityController.cs" />
+    <Compile Include="Controllers\BusinessFunctionController.cs" />
     <Compile Include="Controllers\SubjectAreaController.cs" />
     <Compile Include="CustomContentTypeProvider.cs" />
     <Compile Include="CustomMiddleware.cs" />
