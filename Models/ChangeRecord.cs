@@ -8,5 +8,6 @@ namespace SelfHostedWebApiDataService.Models
         public int ID { get; set; }
         public string ObjectType { get; set; }
         public string ProposedChangeContent { get; set; }
+        public string ObjectName { get; set; }
     }
 }
