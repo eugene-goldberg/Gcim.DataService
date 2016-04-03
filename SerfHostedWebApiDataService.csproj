@@ -173,6 +173,7 @@
   <ItemGroup>
     <Compile Include="Controllers\BusinessEntityController.cs" />
     <Compile Include="Controllers\BusinessFunctionController.cs" />
+    <Compile Include="Controllers\ChangeRecordController.cs" />
     <Compile Include="Controllers\SubjectAreaController.cs" />
     <Compile Include="CustomContentTypeProvider.cs" />
     <Compile Include="CustomMiddleware.cs" />
