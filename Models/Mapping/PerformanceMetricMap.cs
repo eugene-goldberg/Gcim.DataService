@@ -8,21 +8,40 @@ namespace SelfHostedWebApiDataService.Models.Mapping
         public PerformanceMetricMap()
         {
             // Primary Key
-            this.HasKey(t => t.Oid);
+            this.HasKey(t => t.ID);
 
             // Properties
             // Table & Column Mappings
-            this.ToTable("PerformanceMetric");
-            this.Property(t => t.Oid).HasColumnName("Oid");
-            this.Property(t => t.MetricCategory).HasColumnName("MetricCategory");
+            this.ToTable("PerformanceMetrics");
+            this.Property(t => t.ID).HasColumnName("ID");
+            this.Property(t => t.Category).HasColumnName("Category");
             this.Property(t => t.MetricName).HasColumnName("MetricName");
             this.Property(t => t.MetricDefinition).HasColumnName("MetricDefinition");
-            this.Property(t => t.MetricPurpose).HasColumnName("MetricPurpose");
-            this.Property(t => t.ActionableDecisions).HasColumnName("ActionableDecisions");
-            this.Property(t => t.Conditions).HasColumnName("Conditions");
-            this.Property(t => t.AdditionalAnalytics).HasColumnName("AdditionalAnalytics");
-            this.Property(t => t.OptimisticLockField).HasColumnName("OptimisticLockField");
-            this.Property(t => t.GCRecord).HasColumnName("GCRecord");
+            this.Property(t => t.Description).HasColumnName("Description");
+            this.Property(t => t.DataEntity_ID).HasColumnName("DataEntity_ID");
+            this.Property(t => t.Governance_ID).HasColumnName("Governance_ID");
+            this.Property(t => t.BusinessInitiative_ID).HasColumnName("BusinessInitiative_ID");
+
+            // Relationships
+            this.HasMany(t => t.SubjectAreas)
+                .WithMany(t => t.PerformanceMetrics)
+                .Map(m =>
+                    {
+                        m.ToTable("SubjectAreaPerformanceMetrics");
+                        m.MapLeftKey("PerformanceMetric_ID");
+                        m.MapRightKey("SubjectArea_ID");
+                    });
+
+            this.HasOptional(t => t.BusinessInitiative)
+                .WithMany(t => t.PerformanceMetrics)
+                .HasForeignKey(d => d.BusinessInitiative_ID);
+            this.HasOptional(t => t.DataEntity)
+                .WithMany(t => t.PerformanceMetrics)
+                .HasForeignKey(d => d.DataEntity_ID);
+            this.HasOptional(t => t.Governance)
+                .WithMany(t => t.PerformanceMetrics)
+                .HasForeignKey(d => d.Governance_ID);
+
         }
     }
 }

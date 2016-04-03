@@ -8,16 +8,26 @@ namespace SelfHostedWebApiDataService.Models.Mapping
         public GovernanceMap()
         {
             // Primary Key
-            this.HasKey(t => t.Oid);
+            this.HasKey(t => t.ID);
 
             // Properties
             // Table & Column Mappings
-            this.ToTable("Governance");
-            this.Property(t => t.Oid).HasColumnName("Oid");
+            this.ToTable("Governances");
+            this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.Description).HasColumnName("Description");
-            this.Property(t => t.OptimisticLockField).HasColumnName("OptimisticLockField");
-            this.Property(t => t.GCRecord).HasColumnName("GCRecord");
+
+            // Relationships
+            this.HasMany(t => t.SubjectAreas)
+                .WithMany(t => t.Governances)
+                .Map(m =>
+                    {
+                        m.ToTable("GovernanceSubjectAreas");
+                        m.MapLeftKey("Governance_ID");
+                        m.MapRightKey("SubjectArea_ID");
+                    });
+
+
         }
     }
 }

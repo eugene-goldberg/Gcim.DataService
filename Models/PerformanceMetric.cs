@@ -7,33 +7,32 @@ namespace SelfHostedWebApiDataService.Models
     {
         public PerformanceMetric()
         {
-            this.PerformanceMetricBusinessGoalPerformanceMetrics_BusinessGoalPerformanceMetricsBusinessGoal = new List<PerformanceMetricBusinessGoalPerformanceMetrics_BusinessGoalPerformanceMetricsBusinessGoal>();
-            this.PerformanceMetricBusinessInitiativePerformanceMetrics_BusinessInitiativePerformanceMetricBusinessInitiatives = new List<PerformanceMetricBusinessInitiativePerformanceMetrics_BusinessInitiativePerformanceMetricBusinessInitiatives>();
-            this.PerformanceMetricDataDiscoveryMethodPerformanceMetrics_DataDiscoveryMethodPerformanceMetricsDataDiscoveryMethods = new List<PerformanceMetricDataDiscoveryMethodPerformanceMetrics_DataDiscoveryMethodPerformanceMetricsDataDiscoveryMethods>();
-            this.PerformanceMetricMetricSupportedByThisCalculation_MetricCalculationPerformanceMetricCalculations = new List<PerformanceMetricMetricSupportedByThisCalculation_MetricCalculationPerformanceMetricCalculations>();
-            this.PerformanceMetricMockupForMetric_MetricMockupMetricMockups = new List<PerformanceMetricMockupForMetric_MetricMockupMetricMockups>();
-            this.PerformanceMetricRelatedPerformanceMetrics_AnalyticalMethodRelatedAnalythicalMethods = new List<PerformanceMetricRelatedPerformanceMetrics_AnalyticalMethodRelatedAnalythicalMethods>();
-            this.PerformanceMetricRelatedPerformanceMetrics_BusinessQuestionRelatedBusinessQuestions = new List<PerformanceMetricRelatedPerformanceMetrics_BusinessQuestionRelatedBusinessQuestions>();
-            this.PerformanceMetricTrackingMethodPerformanceMetricsTrackingMethods_PerformanceMetricPerformanceMetricBeingTracked = new List<PerformanceMetricTrackingMethodPerformanceMetricsTrackingMethods_PerformanceMetricPerformanceMetricBeingTracked>();
+            this.InformationProducts = new List<InformationProduct>();
+            this.BusinessQuestions = new List<BusinessQuestion>();
+            this.AnalyticalMethods = new List<AnalyticalMethod>();
+            this.BusinessEntities = new List<BusinessEntity>();
+            this.BusinessGoals = new List<BusinessGoal>();
+            this.DataSources = new List<DataSource>();
+            this.SubjectAreas = new List<SubjectArea>();
         }
 
-        public System.Guid Oid { get; set; }
-        public string MetricCategory { get; set; }
+        public int ID { get; set; }
+        public string Category { get; set; }
         public string MetricName { get; set; }
         public string MetricDefinition { get; set; }
-        public string MetricPurpose { get; set; }
-        public string ActionableDecisions { get; set; }
-        public string Conditions { get; set; }
-        public string AdditionalAnalytics { get; set; }
-        public Nullable<int> OptimisticLockField { get; set; }
-        public Nullable<int> GCRecord { get; set; }
-        public virtual ICollection<PerformanceMetricBusinessGoalPerformanceMetrics_BusinessGoalPerformanceMetricsBusinessGoal> PerformanceMetricBusinessGoalPerformanceMetrics_BusinessGoalPerformanceMetricsBusinessGoal { get; set; }
-        public virtual ICollection<PerformanceMetricBusinessInitiativePerformanceMetrics_BusinessInitiativePerformanceMetricBusinessInitiatives> PerformanceMetricBusinessInitiativePerformanceMetrics_BusinessInitiativePerformanceMetricBusinessInitiatives { get; set; }
-        public virtual ICollection<PerformanceMetricDataDiscoveryMethodPerformanceMetrics_DataDiscoveryMethodPerformanceMetricsDataDiscoveryMethods> PerformanceMetricDataDiscoveryMethodPerformanceMetrics_DataDiscoveryMethodPerformanceMetricsDataDiscoveryMethods { get; set; }
-        public virtual ICollection<PerformanceMetricMetricSupportedByThisCalculation_MetricCalculationPerformanceMetricCalculations> PerformanceMetricMetricSupportedByThisCalculation_MetricCalculationPerformanceMetricCalculations { get; set; }
-        public virtual ICollection<PerformanceMetricMockupForMetric_MetricMockupMetricMockups> PerformanceMetricMockupForMetric_MetricMockupMetricMockups { get; set; }
-        public virtual ICollection<PerformanceMetricRelatedPerformanceMetrics_AnalyticalMethodRelatedAnalythicalMethods> PerformanceMetricRelatedPerformanceMetrics_AnalyticalMethodRelatedAnalythicalMethods { get; set; }
-        public virtual ICollection<PerformanceMetricRelatedPerformanceMetrics_BusinessQuestionRelatedBusinessQuestions> PerformanceMetricRelatedPerformanceMetrics_BusinessQuestionRelatedBusinessQuestions { get; set; }
-        public virtual ICollection<PerformanceMetricTrackingMethodPerformanceMetricsTrackingMethods_PerformanceMetricPerformanceMetricBeingTracked> PerformanceMetricTrackingMethodPerformanceMetricsTrackingMethods_PerformanceMetricPerformanceMetricBeingTracked { get; set; }
+        public string Description { get; set; }
+        public Nullable<int> DataEntity_ID { get; set; }
+        public Nullable<int> Governance_ID { get; set; }
+        public Nullable<int> BusinessInitiative_ID { get; set; }
+        public virtual BusinessInitiative BusinessInitiative { get; set; }
+        public virtual DataEntity DataEntity { get; set; }
+        public virtual Governance Governance { get; set; }
+        public virtual ICollection<InformationProduct> InformationProducts { get; set; }
+        public virtual ICollection<BusinessQuestion> BusinessQuestions { get; set; }
+        public virtual ICollection<AnalyticalMethod> AnalyticalMethods { get; set; }
+        public virtual ICollection<BusinessEntity> BusinessEntities { get; set; }
+        public virtual ICollection<BusinessGoal> BusinessGoals { get; set; }
+        public virtual ICollection<DataSource> DataSources { get; set; }
+        public virtual ICollection<SubjectArea> SubjectAreas { get; set; }
     }
 }

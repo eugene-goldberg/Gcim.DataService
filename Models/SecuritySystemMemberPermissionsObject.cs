@@ -5,14 +5,14 @@ namespace SelfHostedWebApiDataService.Models
 {
     public partial class SecuritySystemMemberPermissionsObject
     {
-        public System.Guid Oid { get; set; }
+        public int ID { get; set; }
         public string Members { get; set; }
-        public Nullable<bool> AllowRead { get; set; }
-        public Nullable<bool> AllowWrite { get; set; }
         public string Criteria { get; set; }
-        public Nullable<System.Guid> Owner { get; set; }
-        public Nullable<int> OptimisticLockField { get; set; }
-        public Nullable<int> GCRecord { get; set; }
-        public virtual SecuritySystemTypePermissionsObject SecuritySystemTypePermissionsObject { get; set; }
+        public bool AllowRead { get; set; }
+        public bool AllowWrite { get; set; }
+        public Nullable<bool> EffectiveRead { get; set; }
+        public Nullable<bool> EffectiveWrite { get; set; }
+        public Nullable<int> Owner_ID { get; set; }
+        public virtual TypePermissionObject TypePermissionObject { get; set; }
     }
 }

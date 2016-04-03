@@ -8,16 +8,40 @@ namespace SelfHostedWebApiDataService.Models.Mapping
         public AnalyticalMethodMap()
         {
             // Primary Key
-            this.HasKey(t => t.Oid);
+            this.HasKey(t => t.ID);
 
             // Properties
             // Table & Column Mappings
-            this.ToTable("AnalyticalMethod");
-            this.Property(t => t.Oid).HasColumnName("Oid");
+            this.ToTable("AnalyticalMethods");
+            this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.MethodName).HasColumnName("MethodName");
-            this.Property(t => t.MethodDefinition).HasColumnName("MethodDefinition");
-            this.Property(t => t.OptimisticLockField).HasColumnName("OptimisticLockField");
-            this.Property(t => t.GCRecord).HasColumnName("GCRecord");
+            this.Property(t => t.Description).HasColumnName("Description");
+            this.Property(t => t.InformationProduct_ID).HasColumnName("InformationProduct_ID");
+            this.Property(t => t.Calculation).HasColumnName("Calculation");
+
+            // Relationships
+            this.HasMany(t => t.BusinessEntities)
+                .WithMany(t => t.AnalyticalMethods)
+                .Map(m =>
+                    {
+                        m.ToTable("BusinessEntityAnalyticalMethods");
+                        m.MapLeftKey("AnalyticalMethod_ID");
+                        m.MapRightKey("BusinessEntity_ID");
+                    });
+
+            this.HasMany(t => t.PerformanceMetrics)
+                .WithMany(t => t.AnalyticalMethods)
+                .Map(m =>
+                    {
+                        m.ToTable("PerformanceMetricAnalyticalMethods");
+                        m.MapLeftKey("AnalyticalMethod_ID");
+                        m.MapRightKey("PerformanceMetric_ID");
+                    });
+
+            this.HasOptional(t => t.InformationProduct)
+                .WithMany(t => t.AnalyticalMethods)
+                .HasForeignKey(d => d.InformationProduct_ID);
+
         }
     }
 }

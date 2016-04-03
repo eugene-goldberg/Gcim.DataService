@@ -8,20 +8,15 @@ namespace SelfHostedWebApiDataService.Models.Mapping
         public FileDataMap()
         {
             // Primary Key
-            this.HasKey(t => t.Oid);
+            this.HasKey(t => t.ID);
 
             // Properties
-            this.Property(t => t.FileName)
-                .HasMaxLength(260);
-
             // Table & Column Mappings
-            this.ToTable("FileData");
-            this.Property(t => t.Oid).HasColumnName("Oid");
-            this.Property(t => t.size).HasColumnName("size");
+            this.ToTable("FileDatas");
+            this.Property(t => t.ID).HasColumnName("ID");
+            this.Property(t => t.Size).HasColumnName("Size");
             this.Property(t => t.FileName).HasColumnName("FileName");
             this.Property(t => t.Content).HasColumnName("Content");
-            this.Property(t => t.OptimisticLockField).HasColumnName("OptimisticLockField");
-            this.Property(t => t.GCRecord).HasColumnName("GCRecord");
         }
     }
 }

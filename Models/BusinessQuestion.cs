@@ -7,21 +7,23 @@ namespace SelfHostedWebApiDataService.Models
     {
         public BusinessQuestion()
         {
-            this.BusinessQuestionAssociatedBusinessQuestions_BusinessFunctionAssociatedBusinessFunctions = new List<BusinessQuestionAssociatedBusinessQuestions_BusinessFunctionAssociatedBusinessFunctions>();
-            this.BusinessQuestionRelatedBusinessQuestions_BusinessGoalRelatedSubjectGoals = new List<BusinessQuestionRelatedBusinessQuestions_BusinessGoalRelatedSubjectGoals>();
-            this.PerformanceMetricRelatedPerformanceMetrics_BusinessQuestionRelatedBusinessQuestions = new List<PerformanceMetricRelatedPerformanceMetrics_BusinessQuestionRelatedBusinessQuestions>();
-            this.SubjectAreaRelatedSubjectAreas_BusinessQuestionRelatedBusinessQuestions = new List<SubjectAreaRelatedSubjectAreas_BusinessQuestionRelatedBusinessQuestions>();
+            this.BusinessEntities = new List<BusinessEntity>();
+            this.BusinessFunctions = new List<BusinessFunction>();
+            this.BusinessGoals = new List<BusinessGoal>();
+            this.PerformanceMetrics = new List<PerformanceMetric>();
+            this.SubjectAreas = new List<SubjectArea>();
         }
 
-        public System.Guid Oid { get; set; }
+        public int ID { get; set; }
         public string QuestionDefinition { get; set; }
         public string Comments { get; set; }
         public string RelatedSubjectArea { get; set; }
-        public Nullable<int> OptimisticLockField { get; set; }
-        public Nullable<int> GCRecord { get; set; }
-        public virtual ICollection<BusinessQuestionAssociatedBusinessQuestions_BusinessFunctionAssociatedBusinessFunctions> BusinessQuestionAssociatedBusinessQuestions_BusinessFunctionAssociatedBusinessFunctions { get; set; }
-        public virtual ICollection<BusinessQuestionRelatedBusinessQuestions_BusinessGoalRelatedSubjectGoals> BusinessQuestionRelatedBusinessQuestions_BusinessGoalRelatedSubjectGoals { get; set; }
-        public virtual ICollection<PerformanceMetricRelatedPerformanceMetrics_BusinessQuestionRelatedBusinessQuestions> PerformanceMetricRelatedPerformanceMetrics_BusinessQuestionRelatedBusinessQuestions { get; set; }
-        public virtual ICollection<SubjectAreaRelatedSubjectAreas_BusinessQuestionRelatedBusinessQuestions> SubjectAreaRelatedSubjectAreas_BusinessQuestionRelatedBusinessQuestions { get; set; }
+        public Nullable<int> AnalyticalMethod_ID { get; set; }
+        public virtual AnalyticalMethod AnalyticalMethod { get; set; }
+        public virtual ICollection<BusinessEntity> BusinessEntities { get; set; }
+        public virtual ICollection<BusinessFunction> BusinessFunctions { get; set; }
+        public virtual ICollection<BusinessGoal> BusinessGoals { get; set; }
+        public virtual ICollection<PerformanceMetric> PerformanceMetrics { get; set; }
+        public virtual ICollection<SubjectArea> SubjectAreas { get; set; }
     }
 }

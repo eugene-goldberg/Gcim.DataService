@@ -7,16 +7,18 @@ namespace SelfHostedWebApiDataService.Models
     {
         public DataDeliveryMethod()
         {
-            this.DataDeliveryMethodDataDeliveryMethods_DataDeliveryChannelMethodsDeliveryChannel = new List<DataDeliveryMethodDataDeliveryMethods_DataDeliveryChannelMethodsDeliveryChannel>();
+            this.DataAttributes = new List<DataAttribute>();
+            this.DataSources = new List<DataSource>();
+            this.DataEntities = new List<DataEntity>();
         }
 
-        public System.Guid Oid { get; set; }
-        public string MethodName { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
         public string DataFormat { get; set; }
         public string DeliveryProtocol { get; set; }
-        public Nullable<int> OptimisticLockField { get; set; }
-        public Nullable<int> GCRecord { get; set; }
-        public virtual ICollection<DataDeliveryMethodDataDeliveryMethods_DataDeliveryChannelMethodsDeliveryChannel> DataDeliveryMethodDataDeliveryMethods_DataDeliveryChannelMethodsDeliveryChannel { get; set; }
+        public virtual ICollection<DataAttribute> DataAttributes { get; set; }
+        public virtual ICollection<DataSource> DataSources { get; set; }
+        public virtual ICollection<DataEntity> DataEntities { get; set; }
     }
 }

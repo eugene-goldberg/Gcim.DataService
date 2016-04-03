@@ -8,18 +8,37 @@ namespace SelfHostedWebApiDataService.Models.Mapping
         public DataDeliveryMethodMap()
         {
             // Primary Key
-            this.HasKey(t => t.Oid);
+            this.HasKey(t => t.ID);
 
             // Properties
             // Table & Column Mappings
-            this.ToTable("DataDeliveryMethod");
-            this.Property(t => t.Oid).HasColumnName("Oid");
-            this.Property(t => t.MethodName).HasColumnName("MethodName");
+            this.ToTable("DataDeliveryMethods");
+            this.Property(t => t.ID).HasColumnName("ID");
+            this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.Description).HasColumnName("Description");
             this.Property(t => t.DataFormat).HasColumnName("DataFormat");
             this.Property(t => t.DeliveryProtocol).HasColumnName("DeliveryProtocol");
-            this.Property(t => t.OptimisticLockField).HasColumnName("OptimisticLockField");
-            this.Property(t => t.GCRecord).HasColumnName("GCRecord");
+
+            // Relationships
+            this.HasMany(t => t.DataSources)
+                .WithMany(t => t.DataDeliveryMethods)
+                .Map(m =>
+                    {
+                        m.ToTable("DataDeliveryMethodDataSources");
+                        m.MapLeftKey("DataDeliveryMethod_ID");
+                        m.MapRightKey("DataSource_ID");
+                    });
+
+            this.HasMany(t => t.DataEntities)
+                .WithMany(t => t.DataDeliveryMethods)
+                .Map(m =>
+                    {
+                        m.ToTable("DataEntityDataDeliveryMethods");
+                        m.MapLeftKey("DataDeliveryMethod_ID");
+                        m.MapRightKey("DataEntity_ID");
+                    });
+
+
         }
     }
 }

@@ -8,24 +8,19 @@ namespace SelfHostedWebApiDataService.Models.Mapping
         public HCategoryMap()
         {
             // Primary Key
-            this.HasKey(t => t.Oid);
+            this.HasKey(t => t.ID);
 
             // Properties
-            this.Property(t => t.Name)
-                .HasMaxLength(100);
-
             // Table & Column Mappings
-            this.ToTable("HCategory");
-            this.Property(t => t.Oid).HasColumnName("Oid");
-            this.Property(t => t.Parent).HasColumnName("Parent");
+            this.ToTable("HCategories");
+            this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.Name).HasColumnName("Name");
-            this.Property(t => t.OptimisticLockField).HasColumnName("OptimisticLockField");
-            this.Property(t => t.GCRecord).HasColumnName("GCRecord");
+            this.Property(t => t.Parent_ID).HasColumnName("Parent_ID");
 
             // Relationships
-            this.HasOptional(t => t.HCategory2)
-                .WithMany(t => t.HCategory1)
-                .HasForeignKey(d => d.Parent);
+            this.HasOptional(t => t.HCategory1)
+                .WithMany(t => t.HCategories1)
+                .HasForeignKey(d => d.Parent_ID);
 
         }
     }

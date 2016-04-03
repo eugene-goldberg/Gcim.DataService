@@ -7,24 +7,24 @@ namespace SelfHostedWebApiDataService.Models
     {
         public SubjectArea()
         {
-            this.SubjectAreaAssociatedSubjectAreas_BusinessFunctionAssociatedBusinessFunctions = new List<SubjectAreaAssociatedSubjectAreas_BusinessFunctionAssociatedBusinessFunctions>();
-            this.SubjectAreaBusinessInitiativeSubjectAreas_BusinessInitiativeSubjectAreaBusinessInitiatives = new List<SubjectAreaBusinessInitiativeSubjectAreas_BusinessInitiativeSubjectAreaBusinessInitiatives>();
-            this.SubjectAreaEntitySubjectAreas_EntitySubjectAreaEntities = new List<SubjectAreaEntitySubjectAreas_EntitySubjectAreaEntities>();
-            this.SubjectAreaGovernedSubjectAreas_GovernanceGovernedBy = new List<SubjectAreaGovernedSubjectAreas_GovernanceGovernedBy>();
-            this.SubjectAreaInformationComponentsSubjectArea_InformationComponentSubjectAreaInformationComponents = new List<SubjectAreaInformationComponentsSubjectArea_InformationComponentSubjectAreaInformationComponents>();
-            this.SubjectAreaRelatedSubjectAreas_BusinessQuestionRelatedBusinessQuestions = new List<SubjectAreaRelatedSubjectAreas_BusinessQuestionRelatedBusinessQuestions>();
+            this.Governances = new List<Governance>();
+            this.BusinessEntities = new List<BusinessEntity>();
+            this.BusinessFunctions = new List<BusinessFunction>();
+            this.BusinessInitiatives = new List<BusinessInitiative>();
+            this.BusinessQuestions = new List<BusinessQuestion>();
+            this.DataEntities = new List<DataEntity>();
+            this.PerformanceMetrics = new List<PerformanceMetric>();
         }
 
-        public System.Guid Oid { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Nullable<int> OptimisticLockField { get; set; }
-        public Nullable<int> GCRecord { get; set; }
-        public virtual ICollection<SubjectAreaAssociatedSubjectAreas_BusinessFunctionAssociatedBusinessFunctions> SubjectAreaAssociatedSubjectAreas_BusinessFunctionAssociatedBusinessFunctions { get; set; }
-        public virtual ICollection<SubjectAreaBusinessInitiativeSubjectAreas_BusinessInitiativeSubjectAreaBusinessInitiatives> SubjectAreaBusinessInitiativeSubjectAreas_BusinessInitiativeSubjectAreaBusinessInitiatives { get; set; }
-        public virtual ICollection<SubjectAreaEntitySubjectAreas_EntitySubjectAreaEntities> SubjectAreaEntitySubjectAreas_EntitySubjectAreaEntities { get; set; }
-        public virtual ICollection<SubjectAreaGovernedSubjectAreas_GovernanceGovernedBy> SubjectAreaGovernedSubjectAreas_GovernanceGovernedBy { get; set; }
-        public virtual ICollection<SubjectAreaInformationComponentsSubjectArea_InformationComponentSubjectAreaInformationComponents> SubjectAreaInformationComponentsSubjectArea_InformationComponentSubjectAreaInformationComponents { get; set; }
-        public virtual ICollection<SubjectAreaRelatedSubjectAreas_BusinessQuestionRelatedBusinessQuestions> SubjectAreaRelatedSubjectAreas_BusinessQuestionRelatedBusinessQuestions { get; set; }
+        public virtual ICollection<Governance> Governances { get; set; }
+        public virtual ICollection<BusinessEntity> BusinessEntities { get; set; }
+        public virtual ICollection<BusinessFunction> BusinessFunctions { get; set; }
+        public virtual ICollection<BusinessInitiative> BusinessInitiatives { get; set; }
+        public virtual ICollection<BusinessQuestion> BusinessQuestions { get; set; }
+        public virtual ICollection<DataEntity> DataEntities { get; set; }
+        public virtual ICollection<PerformanceMetric> PerformanceMetrics { get; set; }
     }
 }

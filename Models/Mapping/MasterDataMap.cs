@@ -8,18 +8,28 @@ namespace SelfHostedWebApiDataService.Models.Mapping
         public MasterDataMap()
         {
             // Primary Key
-            this.HasKey(t => t.Oid);
+            this.HasKey(t => t.ID);
 
             // Properties
             // Table & Column Mappings
-            this.ToTable("MasterData");
-            this.Property(t => t.Oid).HasColumnName("Oid");
+            this.ToTable("MasterDatas");
+            this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.MasterDataEntityName).HasColumnName("MasterDataEntityName");
-            this.Property(t => t.MasterDataElementName).HasColumnName("MasterDataElementName");
+            this.Property(t => t.MasterDataAttributeName).HasColumnName("MasterDataAttributeName");
             this.Property(t => t.MasterDataAuthoritativeSystemName).HasColumnName("MasterDataAuthoritativeSystemName");
-            this.Property(t => t.MasterDataLink).HasColumnName("MasterDataLink");
-            this.Property(t => t.OptimisticLockField).HasColumnName("OptimisticLockField");
-            this.Property(t => t.GCRecord).HasColumnName("GCRecord");
+            this.Property(t => t.MasterDataSourceLink).HasColumnName("MasterDataSourceLink");
+
+            // Relationships
+            this.HasMany(t => t.SourceTools)
+                .WithMany(t => t.MasterDatas)
+                .Map(m =>
+                    {
+                        m.ToTable("SourceToolMasterDatas");
+                        m.MapLeftKey("MasterData_ID");
+                        m.MapRightKey("SourceTool_ID");
+                    });
+
+
         }
     }
 }

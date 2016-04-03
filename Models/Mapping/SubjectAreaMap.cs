@@ -8,16 +8,14 @@ namespace SelfHostedWebApiDataService.Models.Mapping
         public SubjectAreaMap()
         {
             // Primary Key
-            this.HasKey(t => t.Oid);
+            this.HasKey(t => t.ID);
 
             // Properties
             // Table & Column Mappings
-            this.ToTable("SubjectArea");
-            this.Property(t => t.Oid).HasColumnName("Oid");
+            this.ToTable("SubjectAreas");
+            this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.Description).HasColumnName("Description");
-            this.Property(t => t.OptimisticLockField).HasColumnName("OptimisticLockField");
-            this.Property(t => t.GCRecord).HasColumnName("GCRecord");
         }
     }
 }

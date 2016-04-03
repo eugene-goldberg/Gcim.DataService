@@ -7,20 +7,28 @@ namespace SelfHostedWebApiDataService.Models
     {
         public Governance()
         {
-            this.GovernanceBusinessInitiativeGovernance_BusinessInitiativeGovernedBusinessInitiatives = new List<GovernanceBusinessInitiativeGovernance_BusinessInitiativeGovernedBusinessInitiatives>();
-            this.GovernanceGovernedBy_BusinessFunctionGovernedBusinessFunctions = new List<GovernanceGovernedBy_BusinessFunctionGovernedBusinessFunctions>();
-            this.GovernanceGovernsOver_EmployeeGoverningEmployees = new List<GovernanceGovernsOver_EmployeeGoverningEmployees>();
-            this.SubjectAreaGovernedSubjectAreas_GovernanceGovernedBy = new List<SubjectAreaGovernedSubjectAreas_GovernanceGovernedBy>();
+            this.InformationProducts = new List<InformationProduct>();
+            this.PerformanceMetrics = new List<PerformanceMetric>();
+            this.SourceTools = new List<SourceTool>();
+            this.BusinessEntities = new List<BusinessEntity>();
+            this.BusinessFunctions = new List<BusinessFunction>();
+            this.BusinessInitiatives = new List<BusinessInitiative>();
+            this.DataSources = new List<DataSource>();
+            this.Employees = new List<Employee>();
+            this.SubjectAreas = new List<SubjectArea>();
         }
 
-        public System.Guid Oid { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Nullable<int> OptimisticLockField { get; set; }
-        public Nullable<int> GCRecord { get; set; }
-        public virtual ICollection<GovernanceBusinessInitiativeGovernance_BusinessInitiativeGovernedBusinessInitiatives> GovernanceBusinessInitiativeGovernance_BusinessInitiativeGovernedBusinessInitiatives { get; set; }
-        public virtual ICollection<GovernanceGovernedBy_BusinessFunctionGovernedBusinessFunctions> GovernanceGovernedBy_BusinessFunctionGovernedBusinessFunctions { get; set; }
-        public virtual ICollection<GovernanceGovernsOver_EmployeeGoverningEmployees> GovernanceGovernsOver_EmployeeGoverningEmployees { get; set; }
-        public virtual ICollection<SubjectAreaGovernedSubjectAreas_GovernanceGovernedBy> SubjectAreaGovernedSubjectAreas_GovernanceGovernedBy { get; set; }
+        public virtual ICollection<InformationProduct> InformationProducts { get; set; }
+        public virtual ICollection<PerformanceMetric> PerformanceMetrics { get; set; }
+        public virtual ICollection<SourceTool> SourceTools { get; set; }
+        public virtual ICollection<BusinessEntity> BusinessEntities { get; set; }
+        public virtual ICollection<BusinessFunction> BusinessFunctions { get; set; }
+        public virtual ICollection<BusinessInitiative> BusinessInitiatives { get; set; }
+        public virtual ICollection<DataSource> DataSources { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<SubjectArea> SubjectAreas { get; set; }
     }
 }

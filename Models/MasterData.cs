@@ -7,22 +7,20 @@ namespace SelfHostedWebApiDataService.Models
     {
         public MasterData()
         {
-            this.MasterDataAssociatedMasterData_DataSourceAssociatedDataSources = new List<MasterDataAssociatedMasterData_DataSourceAssociatedDataSources>();
-            this.MasterDataAssociatedMasterData_DataTableAssociatedDataTables = new List<MasterDataAssociatedMasterData_DataTableAssociatedDataTables>();
-            this.MasterDataAssociatedMasterData_EntityAssociatedEntities = new List<MasterDataAssociatedMasterData_EntityAssociatedEntities>();
-            this.MasterDataAssociatedMasterData_GambiToolAssociatedGambiTools = new List<MasterDataAssociatedMasterData_GambiToolAssociatedGambiTools>();
+            this.BusinessEntities = new List<BusinessEntity>();
+            this.DataEntities = new List<DataEntity>();
+            this.DataSources = new List<DataSource>();
+            this.SourceTools = new List<SourceTool>();
         }
 
-        public System.Guid Oid { get; set; }
+        public int ID { get; set; }
         public string MasterDataEntityName { get; set; }
-        public string MasterDataElementName { get; set; }
+        public string MasterDataAttributeName { get; set; }
         public string MasterDataAuthoritativeSystemName { get; set; }
-        public string MasterDataLink { get; set; }
-        public Nullable<int> OptimisticLockField { get; set; }
-        public Nullable<int> GCRecord { get; set; }
-        public virtual ICollection<MasterDataAssociatedMasterData_DataSourceAssociatedDataSources> MasterDataAssociatedMasterData_DataSourceAssociatedDataSources { get; set; }
-        public virtual ICollection<MasterDataAssociatedMasterData_DataTableAssociatedDataTables> MasterDataAssociatedMasterData_DataTableAssociatedDataTables { get; set; }
-        public virtual ICollection<MasterDataAssociatedMasterData_EntityAssociatedEntities> MasterDataAssociatedMasterData_EntityAssociatedEntities { get; set; }
-        public virtual ICollection<MasterDataAssociatedMasterData_GambiToolAssociatedGambiTools> MasterDataAssociatedMasterData_GambiToolAssociatedGambiTools { get; set; }
+        public string MasterDataSourceLink { get; set; }
+        public virtual ICollection<BusinessEntity> BusinessEntities { get; set; }
+        public virtual ICollection<DataEntity> DataEntities { get; set; }
+        public virtual ICollection<DataSource> DataSources { get; set; }
+        public virtual ICollection<SourceTool> SourceTools { get; set; }
     }
 }

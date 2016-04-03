@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SelfHostedWebApiDataService.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace SelfHostedWebApiDataService.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class BusinessFunctionController : ODataController
     {
-        Model1 db = new Model1();
+        GCIMContext db = new GCIMContext();
 
         protected override void Dispose(bool disposing)
         {

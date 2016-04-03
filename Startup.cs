@@ -8,6 +8,7 @@ using Owin;
 using Nancy;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
+using SelfHostedWebApiDataService.Models;
 
 namespace SelfHostedWebApiDataService
 {
@@ -30,6 +31,7 @@ namespace SelfHostedWebApiDataService
             ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<SubjectArea>("SubjectArea");
             builder.EntitySet<BusinessEntity>("BusinessEntity");
+            builder.EntitySet<ChangeRecord>("ChangeRecord");
             builder.EntitySet<AnalyticalMethod>("AnalyticalMethod");
             builder.EntitySet<BusinessFunction>("BusinessFunction");
             builder.EntitySet<BusinessGoal>("BusinessGoal");

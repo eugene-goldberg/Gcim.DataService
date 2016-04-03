@@ -7,15 +7,13 @@ namespace SelfHostedWebApiDataService.Models
     {
         public HCategory()
         {
-            this.HCategory1 = new List<HCategory>();
+            this.HCategories1 = new List<HCategory>();
         }
 
-        public System.Guid Oid { get; set; }
-        public Nullable<System.Guid> Parent { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
-        public Nullable<int> OptimisticLockField { get; set; }
-        public Nullable<int> GCRecord { get; set; }
-        public virtual ICollection<HCategory> HCategory1 { get; set; }
-        public virtual HCategory HCategory2 { get; set; }
+        public Nullable<int> Parent_ID { get; set; }
+        public virtual ICollection<HCategory> HCategories1 { get; set; }
+        public virtual HCategory HCategory1 { get; set; }
     }
 }

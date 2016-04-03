@@ -7,24 +7,22 @@ namespace SelfHostedWebApiDataService.Models
     {
         public BusinessFunction()
         {
-            this.BusinessGoalAssociatedBusinessGoals_BusinessFunctionAssociatedBusinessFunctions = new List<BusinessGoalAssociatedBusinessGoals_BusinessFunctionAssociatedBusinessFunctions>();
-            this.BusinessInitiativeSponsoredInitiatives_BusinessFunctionSponsoredByBusinessFunction = new List<BusinessInitiativeSponsoredInitiatives_BusinessFunctionSponsoredByBusinessFunction>();
-            this.BusinessQuestionAssociatedBusinessQuestions_BusinessFunctionAssociatedBusinessFunctions = new List<BusinessQuestionAssociatedBusinessQuestions_BusinessFunctionAssociatedBusinessFunctions>();
-            this.EmployeeAssociatedEmployees_BusinessFunctionAssociatedBusinessFcuntions = new List<EmployeeAssociatedEmployees_BusinessFunctionAssociatedBusinessFcuntions>();
-            this.GovernanceGovernedBy_BusinessFunctionGovernedBusinessFunctions = new List<GovernanceGovernedBy_BusinessFunctionGovernedBusinessFunctions>();
-            this.SubjectAreaAssociatedSubjectAreas_BusinessFunctionAssociatedBusinessFunctions = new List<SubjectAreaAssociatedSubjectAreas_BusinessFunctionAssociatedBusinessFunctions>();
+            this.BusinessGoals = new List<BusinessGoal>();
+            this.BusinessInitiatives = new List<BusinessInitiative>();
+            this.BusinessQuestions = new List<BusinessQuestion>();
+            this.Employees = new List<Employee>();
+            this.Governances = new List<Governance>();
+            this.SubjectAreas = new List<SubjectArea>();
         }
 
-        public System.Guid Oid { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Nullable<int> OptimisticLockField { get; set; }
-        public Nullable<int> GCRecord { get; set; }
-        public virtual ICollection<BusinessGoalAssociatedBusinessGoals_BusinessFunctionAssociatedBusinessFunctions> BusinessGoalAssociatedBusinessGoals_BusinessFunctionAssociatedBusinessFunctions { get; set; }
-        public virtual ICollection<BusinessInitiativeSponsoredInitiatives_BusinessFunctionSponsoredByBusinessFunction> BusinessInitiativeSponsoredInitiatives_BusinessFunctionSponsoredByBusinessFunction { get; set; }
-        public virtual ICollection<BusinessQuestionAssociatedBusinessQuestions_BusinessFunctionAssociatedBusinessFunctions> BusinessQuestionAssociatedBusinessQuestions_BusinessFunctionAssociatedBusinessFunctions { get; set; }
-        public virtual ICollection<EmployeeAssociatedEmployees_BusinessFunctionAssociatedBusinessFcuntions> EmployeeAssociatedEmployees_BusinessFunctionAssociatedBusinessFcuntions { get; set; }
-        public virtual ICollection<GovernanceGovernedBy_BusinessFunctionGovernedBusinessFunctions> GovernanceGovernedBy_BusinessFunctionGovernedBusinessFunctions { get; set; }
-        public virtual ICollection<SubjectAreaAssociatedSubjectAreas_BusinessFunctionAssociatedBusinessFunctions> SubjectAreaAssociatedSubjectAreas_BusinessFunctionAssociatedBusinessFunctions { get; set; }
+        public virtual ICollection<BusinessGoal> BusinessGoals { get; set; }
+        public virtual ICollection<BusinessInitiative> BusinessInitiatives { get; set; }
+        public virtual ICollection<BusinessQuestion> BusinessQuestions { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Governance> Governances { get; set; }
+        public virtual ICollection<SubjectArea> SubjectAreas { get; set; }
     }
 }

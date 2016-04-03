@@ -1795,6 +1795,11 @@
             </summary>
             <returns>true if next node was available; false if end of the attribute value was reached.</returns>
         </member>
+        <member name="M:Microsoft.OData.Core.Atom.BufferingXmlReader.Close">
+            <summary>
+            Closes the reader and the underlying input.
+            </summary>
+        </member>
         <member name="M:Microsoft.OData.Core.Atom.BufferingXmlReader.GetAttribute(System.Int32)">
             <summary>
             Returns the value of an attribute based on its index.
@@ -2267,6 +2272,12 @@
             </summary>
             <param name="name">The name to write. </param><exception cref="T:System.ArgumentException">
             <paramref name="name"/> is not a valid NmToken; or <paramref name="name"/> is either null or String.Empty. </exception>
+        </member>
+        <member name="M:Microsoft.OData.Core.Atom.DefaultNamespaceCompensatingXmlWriter.Close">
+            <summary>
+            When overridden in a derived class, closes this stream and the underlying stream.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">A call is made to write more output after Close has been called or the result of this call is an invalid XML document. </exception>
         </member>
         <member name="M:Microsoft.OData.Core.Atom.DefaultNamespaceCompensatingXmlWriter.WriteBinHex(System.Byte[],System.Int32,System.Int32)">
             <summary>
@@ -12403,6 +12414,12 @@
         </member>
         <member name="F:Microsoft.OData.Core.ExceptionUtils.OutOfMemoryType">
             <summary>Type of OutOfMemoryException.</summary>
+        </member>
+        <member name="F:Microsoft.OData.Core.ExceptionUtils.StackOverflowType">
+            <summary>Type of StackOverflowException.</summary>
+        </member>
+        <member name="F:Microsoft.OData.Core.ExceptionUtils.ThreadAbortType">
+            <summary>Type of ThreadAbortException.</summary>
         </member>
         <member name="M:Microsoft.OData.Core.ExceptionUtils.IsCatchableExceptionType(System.Exception)">
             <summary>
@@ -25329,8 +25346,23 @@
             <param name="count">The number of bytes to read.</param>
             <returns>The number of bytes actually read.</returns>
         </member>
-        <member name="M:Microsoft.OData.Core.MessageStreamWrapper.MessageStreamWrappingStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
-            <inheritdoc />
+        <member name="M:Microsoft.OData.Core.MessageStreamWrapper.MessageStreamWrappingStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins a read operation from the stream.
+            </summary>
+            <param name="buffer">The buffer to read the data to.</param>
+            <param name="offset">The offset in the buffer to write to.</param>
+            <param name="count">The number of bytes to read.</param>
+            <param name="callback">The async callback.</param>
+            <param name="state">The async state.</param>
+            <returns>Async result representing the asynchornous operation.</returns>
+        </member>
+        <member name="M:Microsoft.OData.Core.MessageStreamWrapper.MessageStreamWrappingStream.EndRead(System.IAsyncResult)">
+            <summary>
+            Ends a read operation from the stream.
+            </summary>
+            <param name="asyncResult">The async result representing the read operation.</param>
+            <returns>The number of bytes actually read.</returns>
         </member>
         <member name="M:Microsoft.OData.Core.MessageStreamWrapper.MessageStreamWrappingStream.Seek(System.Int64,System.IO.SeekOrigin)">
             <summary>
@@ -25354,8 +25386,22 @@
             <param name="offset">The offset in the buffer to start from.</param>
             <param name="count">The number of bytes to write.</param>
         </member>
-        <member name="M:Microsoft.OData.Core.MessageStreamWrapper.MessageStreamWrappingStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
-            <inheritdoc />
+        <member name="M:Microsoft.OData.Core.MessageStreamWrapper.MessageStreamWrappingStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins an asynchronous write operation to the stream.
+            </summary>
+            <param name="buffer">The buffer to get data from.</param>
+            <param name="offset">The offset in the buffer to start from.</param>
+            <param name="count">The number of bytes to write.</param>
+            <param name="callback">The async callback.</param>
+            <param name="state">The async state.</param>
+            <returns>Async result representing the write operation.</returns>
+        </member>
+        <member name="M:Microsoft.OData.Core.MessageStreamWrapper.MessageStreamWrappingStream.EndWrite(System.IAsyncResult)">
+            <summary>
+            Ends the asynchronous write operation.
+            </summary>
+            <param name="asyncResult">Async result representing the write operation.</param>
         </member>
         <member name="M:Microsoft.OData.Core.MessageStreamWrapper.MessageStreamWrappingStream.Dispose(System.Boolean)">
             <summary>
@@ -26745,8 +26791,23 @@
             <param name="count">The number of bytes to read.</param>
             <returns>The number of bytes actually read.</returns>
         </member>
-        <member name="M:Microsoft.OData.Core.NonDisposingStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
-            <inheritdoc />
+        <member name="M:Microsoft.OData.Core.NonDisposingStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins a read operation from the stream.
+            </summary>
+            <param name="buffer">The buffer to read the data to.</param>
+            <param name="offset">The offset in the buffer to write to.</param>
+            <param name="count">The number of bytes to read.</param>
+            <param name="callback">The async callback.</param>
+            <param name="state">The async state.</param>
+            <returns>Async result representing the asynchornous operation.</returns>
+        </member>
+        <member name="M:Microsoft.OData.Core.NonDisposingStream.EndRead(System.IAsyncResult)">
+            <summary>
+            Ends a read operation from the stream.
+            </summary>
+            <param name="asyncResult">The async result representing the read operation.</param>
+            <returns>The number of bytes actually read.</returns>
         </member>
         <member name="M:Microsoft.OData.Core.NonDisposingStream.Seek(System.Int64,System.IO.SeekOrigin)">
             <summary>
@@ -26770,8 +26831,22 @@
             <param name="offset">The offset in the buffer to start from.</param>
             <param name="count">The number of bytes to write.</param>
         </member>
-        <member name="M:Microsoft.OData.Core.NonDisposingStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
-            <inheritdoc />
+        <member name="M:Microsoft.OData.Core.NonDisposingStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins an asynchronous write operation to the stream.
+            </summary>
+            <param name="buffer">The buffer to get data from.</param>
+            <param name="offset">The offset in the buffer to start from.</param>
+            <param name="count">The number of bytes to write.</param>
+            <param name="callback">The async callback.</param>
+            <param name="state">The async state.</param>
+            <returns>Async result representing the write operation.</returns>
+        </member>
+        <member name="M:Microsoft.OData.Core.NonDisposingStream.EndWrite(System.IAsyncResult)">
+            <summary>
+            Ends the asynchronous write operation.
+            </summary>
+            <param name="asyncResult">Async result representing the write operation.</param>
         </member>
         <member name="P:Microsoft.OData.Core.NonDisposingStream.CanRead">
             <summary>
@@ -27862,8 +27937,22 @@
             <param name="offset">The offset in the buffer to start from.</param>
             <param name="count">The number of bytes to write.</param>
         </member>
-        <member name="M:Microsoft.OData.Core.ODataBatchOperationWriteStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
-            <inheritdoc />
+        <member name="M:Microsoft.OData.Core.ODataBatchOperationWriteStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Writes to the stream.
+            </summary>
+            <param name="buffer">The buffer to get data from.</param>
+            <param name="offset">The offset in the buffer to start from.</param>
+            <param name="count">The number of bytes to write.</param>
+            <param name="callback">The callback to be called when the asynchronous operation completes.</param>
+            <param name="state">A custom state object to be associated with the asynchronous operation.</param>
+            <returns>An <see cref="T:System.IAsyncResult"/> for the asynchronous writing of the buffer to the stream.</returns>
+        </member>
+        <member name="M:Microsoft.OData.Core.ODataBatchOperationWriteStream.EndWrite(System.IAsyncResult)">
+            <summary>
+            Finish the asynchronous write operation.
+            </summary>
+            <param name="asyncResult">The <see cref="T:System.IAsyncResult"/> returned from BaginWrite.</param>
         </member>
         <member name="M:Microsoft.OData.Core.ODataBatchOperationWriteStream.Read(System.Byte[],System.Int32,System.Int32)">
             <summary>
@@ -51488,96 +51577,6 @@
             <param name="g">The value to convert.</param>
             <returns>A string representation of the Guid.</returns>
         </member>
-        <member name="T:Microsoft.OData.Core.TypeCode">
-            <summary>
-            Replacement for TypeCode enum.
-            </summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.Object">
-            <summary>Indicates that no specific TypeCode exists for this type.</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.Boolean">
-            <summary>Boolean</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.Char">
-            <summary>Char</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.SByte">
-            <summary>Signed 8-bit integer</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.Byte">
-            <summary>Unsigned 8-bit integer</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.Int16">
-            <summary>Signed 16-bit integer</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.UInt16">
-            <summary>Unsigned 16-bit integer</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.Int32">
-            <summary>Signed 32-bit integer</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.UInt32">
-            <summary>Unsigned 32-bit integer</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.Int64">
-            <summary>Signed 64-bit integer</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.UInt64">
-            <summary>Unsigned 64-bit integer</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.Single">
-            <summary>IEEE 32-bit float</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.Double">
-            <summary>IEEE 64-bit double</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.Decimal">
-            <summary>Decimal</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.DateTime">
-            <summary>DateTime</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.TypeCode.String">
-            <summary>Unicode character string</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.BindingFlags.IgnoreCase">
-            <summary>Specifies that the case of the member name should not be considered when binding.</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.BindingFlags.DeclaredOnly">
-            <summary>Specifies that only members declared at the level of the supplied type's hierarchy should be
-             considered. Inherited members are not considered.</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.BindingFlags.Instance">
-            <summary>Specifies that instance members are to be included in the search.</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.BindingFlags.Static">
-            <summary>Specifies that static members are to be included in the search.</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.BindingFlags.Public">
-            <summary>Specifies that public members are to be included in the search.</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.BindingFlags.NonPublic">
-            <summary>Specifies that non-public members are to be included in the search.</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.BindingFlags.FlattenHierarchy">
-            <summary>Specifies that public and protected static members up the hierarchy should
-            be returned. Private static members in inherited classes are not returned.
-            Static members include fields, methods, events, and properties. Nested types are not returned.</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.BindingFlags.ExactBinding">
-            <summary>Specifies that types of the supplied arguments must exactly match the types
-            of the corresponding formal parameters. Reflection throws an exception if
-            the caller supplies a non-null Binder object, since that implies that the
-            caller is supplying BindToXXX implementations that will pick the appropriate method.</summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.BindingFlags.OptionalParamBinding">
-            <summary>Returns the set of members whose parameter count matches the number of supplied
-            arguments. This binding flag is used for methods with parameters that have
-            default values and methods with variable arguments (varargs). This flag should
-            only be used with System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[]).
-            </summary>
-        </member>
         <member name="T:Microsoft.OData.Core.PlatformHelper">
             <summary>
             Helper methods that provide a common API surface on all platforms.
@@ -51605,17 +51604,12 @@
         </member>
         <member name="F:Microsoft.OData.Core.PlatformHelper.UriSchemeHttp">
             <summary>
-            Replacement for Uri.UriSchemeHttp, which does not exist on.
+            Use this instead of Uri.UriSchemeHttp.
             </summary>
         </member>
         <member name="F:Microsoft.OData.Core.PlatformHelper.UriSchemeHttps">
             <summary>
-            Replacement for Uri.UriSchemeHttps, which does not exist on.
-            </summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.PlatformHelper.typeCodeMap">
-            <summary>
-            Map of TypeCodes used with GetTypeCode method. Only initialized if that method is called.
+            Use this instead of Uri.UriSchemeHttps.
             </summary>
         </member>
         <member name="M:Microsoft.OData.Core.PlatformHelper.GetAssembly(System.Type)">
@@ -51897,204 +51891,6 @@
             <param name="type">Type on which to call this helper method.</param>
             <returns>All types nested in the current type</returns>
         </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.CheckTypeArgs(System.Reflection.ConstructorInfo,System.Type[])">
-            <summary>
-            Checks if the specified constructor takes arguments of the specified types.
-            </summary>
-            <param name="constructorInfo">ConstructorInfo on which to call this helper method.</param>
-            <param name="types">Array of type arguments to check against the constructor parameters.</param>
-            <returns>True if the constructor takes arguments of the specified types, otherwise false.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.IsAssignableFrom(System.Type,System.Type)">
-            <summary>
-            Replacement for Type.IsAssignableFrom(Type)
-            </summary>
-            <param name="thisType">Type on which to call this helper method.</param>
-            <param name="otherType">Type to test for assignability.</param>
-            <returns>See documentation for method being accessed in the body of the method.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.IsSubclassOf(System.Type,System.Type)">
-            <summary>
-            Replacement for Type.IsSubclassOf(Type).
-            </summary>
-            <param name="thisType">Type on which to call this helper method.</param>
-            <param name="otherType">Type to test if typeType is a subclass.</param>
-            <returns>True if thisType is a subclass of otherType, otherwise false.</returns>
-            <remarks>
-            TODO: Add this back to TypeInfo. This method will still be needed since it works on Type, but the 
-                  implementation should just be able to call the TypeInfo version directly instead of the full implementation here.
-            </remarks>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetMethod(System.Type,System.String)">
-            <summary>
-            Replacement for GetMethod(string).
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <param name="name">Method to find on the specified type.</param>
-            <returns>MethodInfo if one was found for the specified type, otherwise false.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetMethod(System.Type,System.String,System.Type[])">
-            <summary>
-            Replacement for Type.GetMethod(string, Type[]).
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <param name="name">Name of method to find on the specified type.</param>
-            <param name="types">Array of arguments to the method.</param>
-            <returns>MethodInfo if one was found for the specified type, otherwise false.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetMethodWithGenericArgs(System.Type,System.String,System.Boolean,System.Boolean,System.Int32)">
-            <summary>
-            Gets a MethodInfo from the specified type. Replaces uses of Type.GetMember.
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <param name="name">Name of the method to find.</param>
-            <param name="isPublic">True if the method is public, false otherwise.</param>
-            <param name="isStatic">True if the method is static, false otherwise.</param>
-            <param name="genericArgCount">Number of generics arguments the method has.</param>
-            <returns>MethodInfo for the method that was found.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetProperty(System.Type,System.String,System.Type)">
-            <summary>
-            Replacement for Type.GetProperty(string, Type).
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <param name="name">Name of public property to find on the specified type.</param>
-            <param name="returnType">Return type for the property.</param>
-            <returns>PropertyInfo if a property was found on the type with the specified name and return type, otherwise null.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetProperty(System.Type,System.String)">
-            <summary>
-            Replacement for Type.GetProperty(string).
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <param name="name">Name of public property to find on the specified type.</param>
-            <returns>PropertyInfo if a property was found on the type with the specified name and return type, otherwise null.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetGetMethod(System.Reflection.PropertyInfo)">
-            <summary>
-            Replacement for PropertyInfo.GetGetMethod().
-            </summary>
-            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
-            <returns>MethodInfo for the public get accessor of the specified PropertyInfo, or null if there is no get accessor or it is non-public.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetSetMethod(System.Reflection.PropertyInfo)">
-            <summary>
-            Replacement for PropertyInfo.GetSetMethod().
-            </summary>
-            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
-            <returns>MethodInfo for the public set accessor of the specified PropertyInfo, or null if there is no set accessor or it is non-public.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetBaseDefinition(System.Reflection.MethodInfo)">
-            <summary>
-            Replacement for MethodInfo.GetBaseDefinition().
-            </summary>
-            <param name="methodInfo">MethodInfo on which to call this helper method.</param>
-            <returns>See documentation for method being accessed in the body of the method.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetProperties(System.Type)">
-            <summary>
-            Replacement for Type.GetProperties().
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <returns>Enumerable of all instance and static public properties on the type.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetFields(System.Type)">
-            <summary>
-            Replacement for Type.GetFields(string).
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <returns>Enumerable of all public instance fields for the specified type.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetCustomAttributes(System.Type,System.Type,System.Boolean)">
-            <summary>
-            Replacement for Type.GetCustomAttributes(Type, bool).
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <param name="attributeType">Attribute type to find on the specified type.</param>
-            <param name="inherit">True if the base types should be searched, false otherwise.</param>
-            <returns>See documentation for method being accessed in the body of the method.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetCustomAttributes(System.Type,System.Boolean)">
-            <summary>
-            Replacement for Type.GetCustomAttributes(bool).
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <param name="inherit">True if the base types should be searched, false otherwise.</param>
-            <returns>See documentation for method being accessed in the body of the method.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetGenericArguments(System.Type)">
-            <summary>
-            Replacement for Type.GetGenericArguments().
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <returns>Array of Type objects that represent the type arguments of a generic type or the type parameters of a generic type definition.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetInterfaces(System.Type)">
-            <summary>
-            Replacement for Type.GetInterfaces().
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <returns>See documentation for property being accessed in the body of the method.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.IsInstanceOfType(System.Type,System.Object)">
-            <summary>
-            Replacement for Type.IsInstanceOfType(object).
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <param name="obj">Object to test to see if it's an instance of the specified type.</param>
-            <returns>See documentation for method being accessed in the body of the method.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.Close(System.IO.Stream)">
-            <summary>
-            Replacement for Stream.Close().
-            </summary>
-            <param name="stream">Stream on which to call this helper method.</param>
-            <remarks>
-            Many Close methods have been eliminated on Win8, the recommended pattern is to just use Dispose instead.
-            </remarks>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetType(System.Reflection.Assembly,System.String,System.Boolean)">
-            <summary>
-            Replacement for Assembly.GetType(string, bool).
-            </summary>
-            <param name="assembly">Assembly on which to call this helper method.</param>
-            <param name="typeName">Name of the type to get from the assembly.</param>
-            <param name="throwOnError">True if an exception should be thrown if the type cannot be found, otherwise false.</param>
-            <returns>Type instance if the type could be found in the assembly, otherwise null.</returns>
-            <remarks>
-            TODO: Add a new method called Assembly.GetDefinedType(string) that returns a TypeInfo and will throw like Assembly.GetType(string, true) used to.
-                  This helper method will still be needed but should be updated to use the new implementation once it exists.
-            </remarks>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetTypes(System.Reflection.Assembly)">
-            <summary>
-            Replacement for Assembly.GetTypes().
-            </summary>
-            <param name="assembly">Assembly on which to call this helper method.</param>
-            <returns>Enumerable of the types in the assembly.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.GetField(System.Type,System.String)">
-            <summary>
-            Replacement for GetField(string).
-            </summary>
-            <param name="type">Type on which to call this helper method.</param>
-            <param name="name">Method to find on the specified type.</param>
-            <returns>FieldInfo if one was found for the specified type, otherwise false.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.IsInstance(System.Reflection.PropertyInfo)">
-            <summary>
-            Checks if the specified PropertyInfo is an instance property.
-            </summary>
-            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
-            <returns>True if either the GetMethod or SetMethod for the property is an instance method.</returns>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.IsPublic(System.Reflection.PropertyInfo)">
-            <summary>
-            Checks if the specified PropertyInfo is a public property.
-            </summary>
-            <param name="propertyInfo">PropertyInfo on which to call this helper method.</param>
-            <returns>True if either the GetMethod or SetMethod for the property is public.</returns>
-        </member>
         <member name="M:Microsoft.OData.Core.PlatformHelper.CreateCompiled(System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
             Creates a Compiled Regex expression
@@ -52103,28 +51899,6 @@
             <param name="options">Options to use.</param>
             <returns>Regex expression to match supplied patter</returns>
             <remarks>Is marked as compiled option only in platforms otherwise RegexOption.None is used</remarks>
-        </member>
-        <member name="T:Microsoft.OData.Core.PlatformHelper.TypeCodeMap">
-            <summary>
-            Manages the type code mapping used to provide the GetTypeCode functionality.
-            </summary>
-        </member>
-        <member name="F:Microsoft.OData.Core.PlatformHelper.TypeCodeMap.typeCodes">
-            <summary>
-            Dictionary of types and their type codes.
-            </summary>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.TypeCodeMap.#ctor">
-            <summary>
-            Constructor for the map.
-            </summary>
-        </member>
-        <member name="M:Microsoft.OData.Core.PlatformHelper.TypeCodeMap.GetTypeCode(System.Type)">
-            <summary>
-            Method that does the lookup in the type map, given a type.
-            </summary>
-            <param name="type">Type for which to find the type code.</param>
-            <returns>TypeCode for the specified type if it's in the map, otherwise TypeCode.Object.</returns>
         </member>
         <member name="M:Microsoft.OData.Core.WriterValidatorFullValidation.ValidateMessageWriterSettings(Microsoft.OData.Core.ODataMessageWriterSettings,System.Boolean)">
             <summary>
@@ -52515,6 +52289,22 @@
         </member>
         <member name="F:AssemblyRef.ProductPublicKeyToken">
             <summary>Dont know what this is</summary>
+        </member>
+        <member name="M:Microsoft.OData.Core.TextResDescriptionAttribute.#ctor(System.String)">
+            <summary>
+                Constructs a new sys description.
+            </summary>
+            <param name='description'>
+                description text.
+            </param>
+        </member>
+        <member name="P:Microsoft.OData.Core.TextResDescriptionAttribute.Description">
+            <summary>
+                Retrieves the description text.
+            </summary>
+            <returns>
+                description
+            </returns>
         </member>
         <member name="T:Microsoft.OData.Core.TextRes">
              <summary>
