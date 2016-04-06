@@ -15,8 +15,8 @@ namespace SelfHostedWebApiDataService.Models.Mapping
             this.ToTable("ChangeRecords");
             this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.ObjectType).HasColumnName("ObjectType");
-            this.Property(t => t.ProposedChangeContent).HasColumnName("ProposedChangeContent");
             this.Property(t => t.ObjectName).HasColumnName("ObjectName");
+            this.Property(t => t.ProposedChangeContent).HasColumnName("ProposedChangeContent");
         }
     }
 }

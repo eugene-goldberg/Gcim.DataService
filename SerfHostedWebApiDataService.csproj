@@ -178,6 +178,9 @@
     <Compile Include="CustomContentTypeProvider.cs" />
     <Compile Include="CustomMiddleware.cs" />
     <Compile Include="Models\AnalyticalMethod.cs" />
+    <Compile Include="Models\BiDimension.cs" />
+    <Compile Include="Models\BiFact.cs" />
+    <Compile Include="Models\BiMeasure.cs" />
     <Compile Include="Models\BusinessEntity.cs" />
     <Compile Include="Models\BusinessFunction.cs" />
     <Compile Include="Models\BusinessGoal.cs" />
@@ -185,7 +188,7 @@
     <Compile Include="Models\BusinessQuestion.cs" />
     <Compile Include="Models\ChangeRecord.cs" />
     <Compile Include="Models\DataAttribute.cs" />
-    <Compile Include="Models\DataDeliveryMethod.cs" />
+    <Compile Include="Models\DataDeliveryChannel.cs" />
     <Compile Include="Models\DataEntity.cs" />
     <Compile Include="Models\DataLoadMap.cs" />
     <Compile Include="Models\DataSource.cs" />
@@ -196,6 +199,9 @@
     <Compile Include="Models\HCategory.cs" />
     <Compile Include="Models\InformationProduct.cs" />
     <Compile Include="Models\Mapping\AnalyticalMethodMap.cs" />
+    <Compile Include="Models\Mapping\BiDimensionMap.cs" />
+    <Compile Include="Models\Mapping\BiFactMap.cs" />
+    <Compile Include="Models\Mapping\BiMeasureMap.cs" />
     <Compile Include="Models\Mapping\BusinessEntityMap.cs" />
     <Compile Include="Models\Mapping\BusinessFunctionMap.cs" />
     <Compile Include="Models\Mapping\BusinessGoalMap.cs" />
@@ -203,7 +209,7 @@
     <Compile Include="Models\Mapping\BusinessQuestionMap.cs" />
     <Compile Include="Models\Mapping\ChangeRecordMap.cs" />
     <Compile Include="Models\Mapping\DataAttributeMap.cs" />
-    <Compile Include="Models\Mapping\DataDeliveryMethodMap.cs" />
+    <Compile Include="Models\Mapping\DataDeliveryChannelMap.cs" />
     <Compile Include="Models\Mapping\DataEntityMap.cs" />
     <Compile Include="Models\Mapping\DataLoadMapMap.cs" />
     <Compile Include="Models\Mapping\DataSourceMap.cs" />

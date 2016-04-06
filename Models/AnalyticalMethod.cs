@@ -15,8 +15,8 @@ namespace SelfHostedWebApiDataService.Models
         public int ID { get; set; }
         public string MethodName { get; set; }
         public string Description { get; set; }
-        public Nullable<int> InformationProduct_ID { get; set; }
         public string Calculation { get; set; }
+        public Nullable<int> InformationProduct_ID { get; set; }
         public virtual InformationProduct InformationProduct { get; set; }
         public virtual ICollection<BusinessQuestion> BusinessQuestions { get; set; }
         public virtual ICollection<BusinessEntity> BusinessEntities { get; set; }

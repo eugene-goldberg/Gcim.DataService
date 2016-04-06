@@ -16,8 +16,8 @@ namespace SelfHostedWebApiDataService.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Nullable<int> PerformanceMetric_ID { get; set; }
         public Nullable<int> Governance_ID { get; set; }
+        public Nullable<int> PerformanceMetric_ID { get; set; }
         public virtual ICollection<AnalyticalMethod> AnalyticalMethods { get; set; }
         public virtual ICollection<DataEntity> DataEntities { get; set; }
         public virtual Governance Governance { get; set; }

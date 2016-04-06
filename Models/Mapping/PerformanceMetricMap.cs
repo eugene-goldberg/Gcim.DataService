@@ -18,8 +18,8 @@ namespace SelfHostedWebApiDataService.Models.Mapping
             this.Property(t => t.MetricName).HasColumnName("MetricName");
             this.Property(t => t.MetricDefinition).HasColumnName("MetricDefinition");
             this.Property(t => t.Description).HasColumnName("Description");
-            this.Property(t => t.DataEntity_ID).HasColumnName("DataEntity_ID");
             this.Property(t => t.Governance_ID).HasColumnName("Governance_ID");
+            this.Property(t => t.DataEntity_ID).HasColumnName("DataEntity_ID");
             this.Property(t => t.BusinessInitiative_ID).HasColumnName("BusinessInitiative_ID");
 
             // Relationships

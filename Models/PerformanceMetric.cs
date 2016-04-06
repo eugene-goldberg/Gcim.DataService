@@ -21,8 +21,8 @@ namespace SelfHostedWebApiDataService.Models
         public string MetricName { get; set; }
         public string MetricDefinition { get; set; }
         public string Description { get; set; }
-        public Nullable<int> DataEntity_ID { get; set; }
         public Nullable<int> Governance_ID { get; set; }
+        public Nullable<int> DataEntity_ID { get; set; }
         public Nullable<int> BusinessInitiative_ID { get; set; }
         public virtual BusinessInitiative BusinessInitiative { get; set; }
         public virtual DataEntity DataEntity { get; set; }

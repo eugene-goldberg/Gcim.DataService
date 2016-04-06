@@ -14,9 +14,9 @@ namespace SelfHostedWebApiDataService.Models.Mapping
             // Table & Column Mappings
             this.ToTable("Udms");
             this.Property(t => t.ID).HasColumnName("ID");
+            this.Property(t => t.InstanceName).HasColumnName("InstanceName");
             this.Property(t => t.Description).HasColumnName("Description");
             this.Property(t => t.Type).HasColumnName("Type");
-            this.Property(t => t.InstanceName).HasColumnName("InstanceName");
         }
     }
 }

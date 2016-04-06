@@ -17,6 +17,9 @@ namespace SelfHostedWebApiDataService.Models
         }
 
         public DbSet<AnalyticalMethod> AnalyticalMethods { get; set; }
+        public DbSet<BiDimension> BiDimensions { get; set; }
+        public DbSet<BiFact> BiFacts { get; set; }
+        public DbSet<BiMeasure> BiMeasures { get; set; }
         public DbSet<BusinessEntity> BusinessEntities { get; set; }
         public DbSet<BusinessFunction> BusinessFunctions { get; set; }
         public DbSet<BusinessGoal> BusinessGoals { get; set; }
@@ -24,7 +27,7 @@ namespace SelfHostedWebApiDataService.Models
         public DbSet<BusinessQuestion> BusinessQuestions { get; set; }
         public DbSet<ChangeRecord> ChangeRecords { get; set; }
         public DbSet<DataAttribute> DataAttributes { get; set; }
-        public DbSet<DataDeliveryMethod> DataDeliveryMethods { get; set; }
+        public DbSet<DataDeliveryChannel> DataDeliveryChannels { get; set; }
         public DbSet<DataEntity> DataEntities { get; set; }
         public DbSet<DataLoadMap> DataLoadMaps { get; set; }
         public DbSet<DataSource> DataSources { get; set; }
@@ -51,6 +54,9 @@ namespace SelfHostedWebApiDataService.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AnalyticalMethodMap());
+            modelBuilder.Configurations.Add(new BiDimensionMap());
+            modelBuilder.Configurations.Add(new BiFactMap());
+            modelBuilder.Configurations.Add(new BiMeasureMap());
             modelBuilder.Configurations.Add(new BusinessEntityMap());
             modelBuilder.Configurations.Add(new BusinessFunctionMap());
             modelBuilder.Configurations.Add(new BusinessGoalMap());
@@ -58,7 +64,7 @@ namespace SelfHostedWebApiDataService.Models
             modelBuilder.Configurations.Add(new BusinessQuestionMap());
             modelBuilder.Configurations.Add(new ChangeRecordMap());
             modelBuilder.Configurations.Add(new DataAttributeMap());
-            modelBuilder.Configurations.Add(new DataDeliveryMethodMap());
+            modelBuilder.Configurations.Add(new DataDeliveryChannelMap());
             modelBuilder.Configurations.Add(new DataEntityMap());
             modelBuilder.Configurations.Add(new DataLoadMapMap());
             modelBuilder.Configurations.Add(new DataSourceMap());

@@ -7,7 +7,7 @@ namespace SelfHostedWebApiDataService.Models
     {
         public DataSource()
         {
-            this.DataDeliveryMethods = new List<DataDeliveryMethod>();
+            this.DataDeliveryChannels = new List<DataDeliveryChannel>();
             this.DataEntities = new List<DataEntity>();
             this.BusinessEntities = new List<BusinessEntity>();
             this.Employees = new List<Employee>();
@@ -28,7 +28,9 @@ namespace SelfHostedWebApiDataService.Models
         public string SourceDatabaseName { get; set; }
         public string SourceDatabaseType { get; set; }
         public string SourceDatabaseVersion { get; set; }
-        public virtual ICollection<DataDeliveryMethod> DataDeliveryMethods { get; set; }
+        public Nullable<int> BiFact_ID { get; set; }
+        public virtual BiFact BiFact { get; set; }
+        public virtual ICollection<DataDeliveryChannel> DataDeliveryChannels { get; set; }
         public virtual ICollection<DataEntity> DataEntities { get; set; }
         public virtual ICollection<BusinessEntity> BusinessEntities { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }

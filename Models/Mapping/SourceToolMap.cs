@@ -14,8 +14,13 @@ namespace SelfHostedWebApiDataService.Models.Mapping
             // Table & Column Mappings
             this.ToTable("SourceTools");
             this.Property(t => t.ID).HasColumnName("ID");
-            this.Property(t => t.ToolName).HasColumnName("ToolName");
+            this.Property(t => t.ToolInstanceName).HasColumnName("ToolInstanceName");
             this.Property(t => t.Description).HasColumnName("Description");
+            this.Property(t => t.OdsDatabaseName).HasColumnName("OdsDatabaseName");
+            this.Property(t => t.IntroducingProject).HasColumnName("IntroducingProject");
+            this.Property(t => t.DateRecorded).HasColumnName("DateRecorded");
+            this.Property(t => t.InUse).HasColumnName("InUse");
+            this.Property(t => t.Notes).HasColumnName("Notes");
             this.Property(t => t.Governance_ID).HasColumnName("Governance_ID");
             this.Property(t => t.BusinessInitiative_ID).HasColumnName("BusinessInitiative_ID");
 
@@ -24,7 +29,7 @@ namespace SelfHostedWebApiDataService.Models.Mapping
                 .WithMany(t => t.SourceTools)
                 .Map(m =>
                     {
-                        m.ToTable("UdmSourceTools");
+                        m.ToTable("SourceToolUdms");
                         m.MapLeftKey("SourceTool_ID");
                         m.MapRightKey("Udm_ID");
                     });

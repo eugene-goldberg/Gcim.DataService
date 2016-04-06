@@ -16,8 +16,8 @@ namespace SelfHostedWebApiDataService.Models.Mapping
             this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.Description).HasColumnName("Description");
-            this.Property(t => t.PerformanceMetric_ID).HasColumnName("PerformanceMetric_ID");
             this.Property(t => t.Governance_ID).HasColumnName("Governance_ID");
+            this.Property(t => t.PerformanceMetric_ID).HasColumnName("PerformanceMetric_ID");
 
             // Relationships
             this.HasMany(t => t.SourceTools)

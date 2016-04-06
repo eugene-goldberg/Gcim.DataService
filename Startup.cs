@@ -30,6 +30,9 @@ namespace SelfHostedWebApiDataService
 
             ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<SubjectArea>("SubjectArea");
+            builder.EntitySet<BiFact>("BiFact");
+            builder.EntitySet<BiMeasure>("BiMeasure");
+            builder.EntitySet<BiDimension>("BiDimension");
             builder.EntitySet<BusinessEntity>("BusinessEntity");
             builder.EntitySet<ChangeRecord>("ChangeRecord");
             builder.EntitySet<AnalyticalMethod>("AnalyticalMethod");
@@ -38,7 +41,7 @@ namespace SelfHostedWebApiDataService
             builder.EntitySet<BusinessInitiative>("BusinessInitiative");
             builder.EntitySet<BusinessQuestion>("BusinessQuestion");
             builder.EntitySet<DataAttribute>("DataAttribute");
-            builder.EntitySet<DataDeliveryMethod>("DataDeliveryMethod");
+            builder.EntitySet<DataDeliveryChannel>("DataDeliveryChannel");
             builder.EntitySet<DataEntity>("DataEntity");
             builder.EntitySet<DataLoadMap>("DataLoadMap");
             builder.EntitySet<DataSource>("DataSource");
