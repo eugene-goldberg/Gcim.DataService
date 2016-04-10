@@ -9,6 +9,7 @@ using Nancy;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
 using SelfHostedWebApiDataService.Models;
+using System.Web.Http.Cors;
 
 namespace SelfHostedWebApiDataService
 {
@@ -20,7 +21,9 @@ namespace SelfHostedWebApiDataService
             // Configure Web API for self-host. 
             var config = new HttpConfiguration();
 
-            config.EnableCors();
+            var corsAttr = new EnableCorsAttribute("*", "*", "*", null);
+
+            config.EnableCors(corsAttr);
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

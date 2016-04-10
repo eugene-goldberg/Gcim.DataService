@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Web.OData.Builder;
 
 namespace SelfHostedWebApiDataService.Models
 {

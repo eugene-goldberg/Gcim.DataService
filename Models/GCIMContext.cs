@@ -1,6 +1,7 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using SelfHostedWebApiDataService.Models.Mapping;
+using System.Web.OData.Builder;
 
 namespace SelfHostedWebApiDataService.Models
 {

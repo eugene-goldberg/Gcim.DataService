@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Web.OData.Builder;
 
 namespace SelfHostedWebApiDataService.Models
 {
@@ -19,6 +20,7 @@ namespace SelfHostedWebApiDataService.Models
         public Nullable<int> Governance_ID { get; set; }
         public Nullable<int> PerformanceMetric_ID { get; set; }
         public virtual ICollection<AnalyticalMethod> AnalyticalMethods { get; set; }
+        [AutoExpand]
         public virtual ICollection<DataEntity> DataEntities { get; set; }
         public virtual Governance Governance { get; set; }
         public virtual PerformanceMetric PerformanceMetric { get; set; }

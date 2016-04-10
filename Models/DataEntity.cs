@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Web.OData.Builder;
 
 namespace SelfHostedWebApiDataService.Models
 {
@@ -32,9 +33,12 @@ namespace SelfHostedWebApiDataService.Models
         public virtual ICollection<PerformanceMetric> PerformanceMetrics { get; set; }
         public virtual ICollection<DataAttribute> DataAttributes { get; set; }
         public virtual ICollection<BusinessEntity> BusinessEntities { get; set; }
+        [AutoExpand]
         public virtual ICollection<DataDeliveryChannel> DataDeliveryChannels { get; set; }
+        [AutoExpand]
         public virtual ICollection<DataSource> DataSources { get; set; }
         public virtual ICollection<MasterData> MasterDatas { get; set; }
+        [AutoExpand]
         public virtual ICollection<SourceTool> SourceTools { get; set; }
         public virtual ICollection<SubjectArea> SubjectAreas { get; set; }
         public virtual ICollection<Udm> Udms { get; set; }
