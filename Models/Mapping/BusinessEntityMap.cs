@@ -45,15 +45,6 @@ namespace SelfHostedWebApiDataService.Models.Mapping
                         m.MapRightKey("BusinessQuestion_ID");
                     });
 
-            this.HasMany(t => t.DataAttributes)
-                .WithMany(t => t.BusinessEntities)
-                .Map(m =>
-                    {
-                        m.ToTable("DataAttributeBusinessEntities");
-                        m.MapLeftKey("BusinessEntity_ID");
-                        m.MapRightKey("DataAttribute_ID");
-                    });
-
             this.HasMany(t => t.DataEntities)
                 .WithMany(t => t.BusinessEntities)
                 .Map(m =>
@@ -124,6 +115,15 @@ namespace SelfHostedWebApiDataService.Models.Mapping
                         m.ToTable("SubjectAreaBusinessEntities");
                         m.MapLeftKey("BusinessEntity_ID");
                         m.MapRightKey("SubjectArea_ID");
+                    });
+
+            this.HasMany(t => t.UdmDataAttributes)
+                .WithMany(t => t.BusinessEntities)
+                .Map(m =>
+                    {
+                        m.ToTable("UdmDataAttributeBusinessEntities");
+                        m.MapLeftKey("BusinessEntity_ID");
+                        m.MapRightKey("UdmDataAttribute_ID");
                     });
 
 

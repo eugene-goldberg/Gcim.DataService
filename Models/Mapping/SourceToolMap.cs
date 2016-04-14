@@ -29,7 +29,7 @@ namespace SelfHostedWebApiDataService.Models.Mapping
                 .WithMany(t => t.SourceTools)
                 .Map(m =>
                     {
-                        m.ToTable("SourceToolUdms");
+                        m.ToTable("UdmSourceTools");
                         m.MapLeftKey("SourceTool_ID");
                         m.MapRightKey("Udm_ID");
                     });

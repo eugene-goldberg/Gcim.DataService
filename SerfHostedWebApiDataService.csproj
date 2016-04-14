@@ -172,16 +172,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AnalyticalMethodController.cs" />
-    <Compile Include="Controllers\BiDimensionController.cs" />
-    <Compile Include="Controllers\BiFactController.cs" />
-    <Compile Include="Controllers\BiMeasureController.cs" />
+    <Compile Include="Controllers\UdmDimensionController.cs" />
+    <Compile Include="Controllers\UdmFactController.cs" />
+    <Compile Include="Controllers\UdmMeasureController.cs" />
     <Compile Include="Controllers\BusinessEntityController.cs" />
     <Compile Include="Controllers\BusinessFunctionController.cs" />
     <Compile Include="Controllers\BusinessGoalController.cs" />
     <Compile Include="Controllers\BusinessInitiativeController.cs" />
     <Compile Include="Controllers\BusinessQuestionController.cs" />
     <Compile Include="Controllers\ChangeRecordController.cs" />
-    <Compile Include="Controllers\DataAttributeController.cs" />
+    <Compile Include="Controllers\UdmDataAttributeController.cs" />
     <Compile Include="Controllers\DataDeliveryChannelController.cs" />
     <Compile Include="Controllers\DataEntityController.cs" />
     <Compile Include="Controllers\DataSourceController.cs" />
@@ -196,9 +196,6 @@
     <Compile Include="CustomContentTypeProvider.cs" />
     <Compile Include="CustomMiddleware.cs" />
     <Compile Include="Models\AnalyticalMethod.cs" />
-    <Compile Include="Models\BiDimension.cs" />
-    <Compile Include="Models\BiFact.cs" />
-    <Compile Include="Models\BiMeasure.cs" />
     <Compile Include="Models\BusinessEntity.cs" />
     <Compile Include="Models\BusinessFunction.cs" />
     <Compile Include="Models\BusinessGoal.cs" />
@@ -217,9 +214,6 @@
     <Compile Include="Models\HCategory.cs" />
     <Compile Include="Models\InformationProduct.cs" />
     <Compile Include="Models\Mapping\AnalyticalMethodMap.cs" />
-    <Compile Include="Models\Mapping\BiDimensionMap.cs" />
-    <Compile Include="Models\Mapping\BiFactMap.cs" />
-    <Compile Include="Models\Mapping\BiMeasureMap.cs" />
     <Compile Include="Models\Mapping\BusinessEntityMap.cs" />
     <Compile Include="Models\Mapping\BusinessFunctionMap.cs" />
     <Compile Include="Models\Mapping\BusinessGoalMap.cs" />
@@ -248,7 +242,11 @@
     <Compile Include="Models\Mapping\SourceToolMap.cs" />
     <Compile Include="Models\Mapping\SubjectAreaMap.cs" />
     <Compile Include="Models\Mapping\TypePermissionObjectMap.cs" />
+    <Compile Include="Models\Mapping\UdmDataAttributeMap.cs" />
+    <Compile Include="Models\Mapping\UdmDimensionMap.cs" />
+    <Compile Include="Models\Mapping\UdmFactMap.cs" />
     <Compile Include="Models\Mapping\UdmMap.cs" />
+    <Compile Include="Models\Mapping\UdmMeasureMap.cs" />
     <Compile Include="Models\Mapping\UserMap.cs" />
     <Compile Include="Models\MasterData.cs" />
     <Compile Include="Models\ModelDifference.cs" />
@@ -263,6 +261,10 @@
     <Compile Include="Models\SubjectArea.cs" />
     <Compile Include="Models\TypePermissionObject.cs" />
     <Compile Include="Models\Udm.cs" />
+    <Compile Include="Models\UdmDataAttribute.cs" />
+    <Compile Include="Models\UdmDimension.cs" />
+    <Compile Include="Models\UdmFact.cs" />
+    <Compile Include="Models\UdmMeasure.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

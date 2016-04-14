@@ -25,30 +25,6 @@ namespace SelfHostedWebApiDataService.Models.Mapping
             this.Property(t => t.Transformation).HasColumnName("Transformation");
             this.Property(t => t.Notes).HasColumnName("Notes");
             this.Property(t => t.BiFact_ID).HasColumnName("BiFact_ID");
-
-            // Relationships
-            this.HasMany(t => t.DataEntities)
-                .WithMany(t => t.DataAttributes)
-                .Map(m =>
-                    {
-                        m.ToTable("DataAttributeDataEntities");
-                        m.MapLeftKey("DataAttribute_ID");
-                        m.MapRightKey("DataEntity_ID");
-                    });
-
-            this.HasMany(t => t.Udms)
-                .WithMany(t => t.DataAttributes)
-                .Map(m =>
-                    {
-                        m.ToTable("UdmDataAttributes");
-                        m.MapLeftKey("DataAttribute_ID");
-                        m.MapRightKey("Udm_ID");
-                    });
-
-            this.HasOptional(t => t.BiFact)
-                .WithMany(t => t.DataAttributes)
-                .HasForeignKey(d => d.BiFact_ID);
-
         }
     }
 }

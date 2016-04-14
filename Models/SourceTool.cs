@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Web.OData.Builder;
 
 namespace SelfHostedWebApiDataService.Models
 {
@@ -9,10 +8,10 @@ namespace SelfHostedWebApiDataService.Models
         public SourceTool()
         {
             this.InformationProducts = new List<InformationProduct>();
-            this.MasterDatas = new List<MasterData>();
             this.BusinessEntities = new List<BusinessEntity>();
             this.DataEntities = new List<DataEntity>();
             this.DataSources = new List<DataSource>();
+            this.MasterDatas = new List<MasterData>();
             this.Udms = new List<Udm>();
         }
 
@@ -29,10 +28,10 @@ namespace SelfHostedWebApiDataService.Models
         public virtual BusinessInitiative BusinessInitiative { get; set; }
         public virtual Governance Governance { get; set; }
         public virtual ICollection<InformationProduct> InformationProducts { get; set; }
-        public virtual ICollection<MasterData> MasterDatas { get; set; }
         public virtual ICollection<BusinessEntity> BusinessEntities { get; set; }
         public virtual ICollection<DataEntity> DataEntities { get; set; }
         public virtual ICollection<DataSource> DataSources { get; set; }
+        public virtual ICollection<MasterData> MasterDatas { get; set; }
         public virtual ICollection<Udm> Udms { get; set; }
     }
 }

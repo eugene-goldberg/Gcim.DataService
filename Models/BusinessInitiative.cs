@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Web.OData.Builder;
 
 namespace SelfHostedWebApiDataService.Models
 {
@@ -24,7 +23,6 @@ namespace SelfHostedWebApiDataService.Models
         public System.DateTime StartDate { get; set; }
         public System.DateTime EndDate { get; set; }
         public string Status { get; set; }
-        [AutoExpand]
         public virtual ICollection<PerformanceMetric> PerformanceMetrics { get; set; }
         public virtual ICollection<SourceTool> SourceTools { get; set; }
         public virtual ICollection<BusinessEntity> BusinessEntities { get; set; }

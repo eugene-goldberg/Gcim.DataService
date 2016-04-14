@@ -17,9 +17,6 @@ namespace SelfHostedWebApiDataService.Models.Mapping
             this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.Description).HasColumnName("Description");
             this.Property(t => t.InformationProduct_ID).HasColumnName("InformationProduct_ID");
-            this.Property(t => t.BiMeasure_ID).HasColumnName("BiMeasure_ID");
-            this.Property(t => t.BiFact_ID).HasColumnName("BiFact_ID");
-            this.Property(t => t.BiDimension_ID).HasColumnName("BiDimension_ID");
 
             // Relationships
             this.HasMany(t => t.DataSources)
@@ -58,6 +55,15 @@ namespace SelfHostedWebApiDataService.Models.Mapping
                         m.MapRightKey("SubjectArea_ID");
                     });
 
+            this.HasMany(t => t.UdmDataAttributes)
+                .WithMany(t => t.DataEntities)
+                .Map(m =>
+                    {
+                        m.ToTable("UdmDataAttributeDataEntities");
+                        m.MapLeftKey("DataEntity_ID");
+                        m.MapRightKey("UdmDataAttribute_ID");
+                    });
+
             this.HasMany(t => t.Udms)
                 .WithMany(t => t.DataEntities)
                 .Map(m =>
@@ -67,15 +73,33 @@ namespace SelfHostedWebApiDataService.Models.Mapping
                         m.MapRightKey("Udm_ID");
                     });
 
-            this.HasOptional(t => t.BiDimension)
+            this.HasMany(t => t.UdmDimensions)
                 .WithMany(t => t.DataEntities)
-                .HasForeignKey(d => d.BiDimension_ID);
-            this.HasOptional(t => t.BiFact)
+                .Map(m =>
+                    {
+                        m.ToTable("UdmDimensionDataEntities");
+                        m.MapLeftKey("DataEntity_ID");
+                        m.MapRightKey("UdmDimension_ID");
+                    });
+
+            this.HasMany(t => t.UdmFacts)
                 .WithMany(t => t.DataEntities)
-                .HasForeignKey(d => d.BiFact_ID);
-            this.HasOptional(t => t.BiMeasure)
+                .Map(m =>
+                    {
+                        m.ToTable("UdmFactDataEntities");
+                        m.MapLeftKey("DataEntity_ID");
+                        m.MapRightKey("UdmFact_ID");
+                    });
+
+            this.HasMany(t => t.UdmMeasures)
                 .WithMany(t => t.DataEntities)
-                .HasForeignKey(d => d.BiMeasure_ID);
+                .Map(m =>
+                    {
+                        m.ToTable("UdmMeasureDataEntities");
+                        m.MapLeftKey("DataEntity_ID");
+                        m.MapRightKey("UdmMeasure_ID");
+                    });
+
             this.HasOptional(t => t.InformationProduct)
                 .WithMany(t => t.DataEntities)
                 .HasForeignKey(d => d.InformationProduct_ID);

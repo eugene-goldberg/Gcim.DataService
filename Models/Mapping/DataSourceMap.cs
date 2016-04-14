@@ -24,7 +24,7 @@ namespace SelfHostedWebApiDataService.Models.Mapping
             this.Property(t => t.SourceDatabaseName).HasColumnName("SourceDatabaseName");
             this.Property(t => t.SourceDatabaseType).HasColumnName("SourceDatabaseType");
             this.Property(t => t.SourceDatabaseVersion).HasColumnName("SourceDatabaseVersion");
-            this.Property(t => t.BiFact_ID).HasColumnName("BiFact_ID");
+            this.Property(t => t.UdmFact_ID).HasColumnName("UdmFact_ID");
 
             // Relationships
             this.HasMany(t => t.Employees)
@@ -72,9 +72,9 @@ namespace SelfHostedWebApiDataService.Models.Mapping
                         m.MapRightKey("SourceTool_ID");
                     });
 
-            this.HasOptional(t => t.BiFact)
+            this.HasOptional(t => t.UdmFact)
                 .WithMany(t => t.DataSources)
-                .HasForeignKey(d => d.BiFact_ID);
+                .HasForeignKey(d => d.UdmFact_ID);
 
         }
     }

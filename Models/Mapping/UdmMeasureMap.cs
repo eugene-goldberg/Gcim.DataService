@@ -3,16 +3,16 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace SelfHostedWebApiDataService.Models.Mapping
 {
-    public class BiMeasureMap : EntityTypeConfiguration<BiMeasure>
+    public class UdmMeasureMap : EntityTypeConfiguration<UdmMeasure>
     {
-        public BiMeasureMap()
+        public UdmMeasureMap()
         {
             // Primary Key
             this.HasKey(t => t.ID);
 
             // Properties
             // Table & Column Mappings
-            this.ToTable("BiMeasures");
+            this.ToTable("UdmMeasures");
             this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.Measure).HasColumnName("Measure");
             this.Property(t => t.EtlOrSsas).HasColumnName("EtlOrSsas");

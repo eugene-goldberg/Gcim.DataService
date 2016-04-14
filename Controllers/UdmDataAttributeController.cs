@@ -9,8 +9,8 @@ using System.Web.OData;
 
 namespace SelfHostedWebApiDataService.Controllers
 {
-     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class BiDimensionController : ODataController
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class UdmDataAttributeController : ODataController
     {
         GCIMContext db = new GCIMContext();
 
@@ -21,9 +21,9 @@ namespace SelfHostedWebApiDataService.Controllers
         }
 
         [EnableQuery]
-        public IQueryable<BiDimension> Get()
+        public IQueryable<UdmDataAttribute> Get()
         {
-            return db.BiDimensions;
+            return db.UdmDataAttributes;
         }
     }
 }

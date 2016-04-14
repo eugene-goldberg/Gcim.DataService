@@ -24,7 +24,7 @@ namespace SelfHostedWebApiDataService.Models.Mapping
                 .WithMany(t => t.MasterDatas)
                 .Map(m =>
                     {
-                        m.ToTable("MasterDataSourceTools");
+                        m.ToTable("SourceToolMasterDatas");
                         m.MapLeftKey("MasterData_ID");
                         m.MapRightKey("SourceTool_ID");
                     });

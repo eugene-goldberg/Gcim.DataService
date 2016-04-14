@@ -10,7 +10,7 @@ using System.Web.OData;
 namespace SelfHostedWebApiDataService.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class BiFactController : ODataController
+    public class UdmMeasureController : ODataController
     {
         GCIMContext db = new GCIMContext();
 
@@ -21,9 +21,9 @@ namespace SelfHostedWebApiDataService.Controllers
         }
 
         [EnableQuery]
-        public IQueryable<BiFact> Get()
+        public IQueryable<UdmMeasure> Get()
         {
-            return db.BiFacts;
+            return db.UdmMeasures;
         }
     }
 }

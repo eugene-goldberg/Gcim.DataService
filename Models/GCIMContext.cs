@@ -1,7 +1,6 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using SelfHostedWebApiDataService.Models.Mapping;
-using System.Web.OData.Builder;
 
 namespace SelfHostedWebApiDataService.Models
 {
@@ -18,9 +17,6 @@ namespace SelfHostedWebApiDataService.Models
         }
 
         public DbSet<AnalyticalMethod> AnalyticalMethods { get; set; }
-        public DbSet<BiDimension> BiDimensions { get; set; }
-        public DbSet<BiFact> BiFacts { get; set; }
-        public DbSet<BiMeasure> BiMeasures { get; set; }
         public DbSet<BusinessEntity> BusinessEntities { get; set; }
         public DbSet<BusinessFunction> BusinessFunctions { get; set; }
         public DbSet<BusinessGoal> BusinessGoals { get; set; }
@@ -49,15 +45,16 @@ namespace SelfHostedWebApiDataService.Models
         public DbSet<SourceTool> SourceTools { get; set; }
         public DbSet<SubjectArea> SubjectAreas { get; set; }
         public DbSet<TypePermissionObject> TypePermissionObjects { get; set; }
+        public DbSet<UdmDataAttribute> UdmDataAttributes { get; set; }
+        public DbSet<UdmDimension> UdmDimensions { get; set; }
+        public DbSet<UdmFact> UdmFacts { get; set; }
+        public DbSet<UdmMeasure> UdmMeasures { get; set; }
         public DbSet<Udm> Udms { get; set; }
         public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AnalyticalMethodMap());
-            modelBuilder.Configurations.Add(new BiDimensionMap());
-            modelBuilder.Configurations.Add(new BiFactMap());
-            modelBuilder.Configurations.Add(new BiMeasureMap());
             modelBuilder.Configurations.Add(new BusinessEntityMap());
             modelBuilder.Configurations.Add(new BusinessFunctionMap());
             modelBuilder.Configurations.Add(new BusinessGoalMap());
@@ -86,6 +83,10 @@ namespace SelfHostedWebApiDataService.Models
             modelBuilder.Configurations.Add(new SourceToolMap());
             modelBuilder.Configurations.Add(new SubjectAreaMap());
             modelBuilder.Configurations.Add(new TypePermissionObjectMap());
+            modelBuilder.Configurations.Add(new UdmDataAttributeMap());
+            modelBuilder.Configurations.Add(new UdmDimensionMap());
+            modelBuilder.Configurations.Add(new UdmFactMap());
+            modelBuilder.Configurations.Add(new UdmMeasureMap());
             modelBuilder.Configurations.Add(new UdmMap());
             modelBuilder.Configurations.Add(new UserMap());
         }

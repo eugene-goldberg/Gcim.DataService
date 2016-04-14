@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Web.OData.Builder;
 
 namespace SelfHostedWebApiDataService.Models
 {
@@ -29,8 +28,8 @@ namespace SelfHostedWebApiDataService.Models
         public string SourceDatabaseName { get; set; }
         public string SourceDatabaseType { get; set; }
         public string SourceDatabaseVersion { get; set; }
-        public Nullable<int> BiFact_ID { get; set; }
-        public virtual BiFact BiFact { get; set; }
+        public Nullable<int> UdmFact_ID { get; set; }
+        public virtual UdmFact UdmFact { get; set; }
         public virtual ICollection<DataDeliveryChannel> DataDeliveryChannels { get; set; }
         public virtual ICollection<DataEntity> DataEntities { get; set; }
         public virtual ICollection<BusinessEntity> BusinessEntities { get; set; }

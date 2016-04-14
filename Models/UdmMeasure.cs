@@ -1,16 +1,15 @@
 using System;
 using System.Collections.Generic;
-using System.Web.OData.Builder;
 
 namespace SelfHostedWebApiDataService.Models
 {
-    public partial class BiMeasure
+    public partial class UdmMeasure
     {
-        public BiMeasure()
+        public UdmMeasure()
         {
             this.DataEntities = new List<DataEntity>();
-            this.BiDimensions = new List<BiDimension>();
-            this.BiFacts = new List<BiFact>();
+            this.UdmDimensions = new List<UdmDimension>();
+            this.UdmFacts = new List<UdmFact>();
         }
 
         public int ID { get; set; }
@@ -21,7 +20,7 @@ namespace SelfHostedWebApiDataService.Models
         public string FactTableName { get; set; }
         public string DetailTableName { get; set; }
         public virtual ICollection<DataEntity> DataEntities { get; set; }
-        public virtual ICollection<BiDimension> BiDimensions { get; set; }
-        public virtual ICollection<BiFact> BiFacts { get; set; }
+        public virtual ICollection<UdmDimension> UdmDimensions { get; set; }
+        public virtual ICollection<UdmFact> UdmFacts { get; set; }
     }
 }
