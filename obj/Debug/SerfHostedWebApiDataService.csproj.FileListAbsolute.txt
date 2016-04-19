@@ -313,4 +313,3 @@ C:\Projects\Gcim.DataService\bin\Debug\zh-Hans\Microsoft.Spatial.resources.dll
 C:\Projects\Gcim.DataService\bin\Debug\zh-Hant\Microsoft.Spatial.resources.dll
 C:\Projects\Gcim.DataService\obj\Debug\SelfHostedWebApiDataService.exe
 C:\Projects\Gcim.DataService\obj\Debug\SelfHostedWebApiDataService.pdb
-C:\Projects\Gcim.DataService\obj\Debug\SerfHostedWebApiDataService.csprojResolveAssemblyReference.cache

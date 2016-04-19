@@ -13,6 +13,7 @@ namespace SelfHostedWebApiDataService.Models
             this.DataDeliveryChannels = new List<DataDeliveryChannel>();
             this.DataSources = new List<DataSource>();
             this.MasterDatas = new List<MasterData>();
+            this.OdsDataAttributes = new List<OdsDataAttribute>();
             this.SourceTools = new List<SourceTool>();
             this.SubjectAreas = new List<SubjectArea>();
             this.UdmDataAttributes = new List<UdmDataAttribute>();
@@ -34,6 +35,8 @@ namespace SelfHostedWebApiDataService.Models
         [AutoExpand]
         public virtual ICollection<DataSource> DataSources { get; set; }
         public virtual ICollection<MasterData> MasterDatas { get; set; }
+        [AutoExpand]
+        public virtual ICollection<OdsDataAttribute> OdsDataAttributes { get; set; }
         [AutoExpand]
         public virtual ICollection<SourceTool> SourceTools { get; set; }
         public virtual ICollection<SubjectArea> SubjectAreas { get; set; }

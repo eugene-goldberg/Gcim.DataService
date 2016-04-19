@@ -37,6 +37,15 @@ namespace SelfHostedWebApiDataService.Models.Mapping
                         m.MapRightKey("MasterData_ID");
                     });
 
+            this.HasMany(t => t.OdsDataAttributes)
+                .WithMany(t => t.DataEntities)
+                .Map(m =>
+                    {
+                        m.ToTable("OdsDataAttributeDataEntities");
+                        m.MapLeftKey("DataEntity_ID");
+                        m.MapRightKey("OdsDataAttribute_ID");
+                    });
+
             this.HasMany(t => t.SourceTools)
                 .WithMany(t => t.DataEntities)
                 .Map(m =>

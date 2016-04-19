@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Web.OData.Builder;
 
 namespace SelfHostedWebApiDataService.Models
 {
@@ -29,6 +30,7 @@ namespace SelfHostedWebApiDataService.Models
         public virtual ICollection<BusinessGoal> BusinessGoals { get; set; }
         public virtual ICollection<BusinessInitiative> BusinessInitiatives { get; set; }
         public virtual ICollection<BusinessQuestion> BusinessQuestions { get; set; }
+        [AutoExpand]
         public virtual ICollection<DataEntity> DataEntities { get; set; }
         public virtual ICollection<DataSource> DataSources { get; set; }
         public virtual ICollection<Governance> Governances { get; set; }

@@ -37,6 +37,7 @@ namespace SelfHostedWebApiDataService.Models
         public DbSet<ModelDifferenceAspect> ModelDifferenceAspects { get; set; }
         public DbSet<ModelDifference> ModelDifferences { get; set; }
         public DbSet<ModuleInfo> ModuleInfoes { get; set; }
+        public DbSet<OdsDataAttribute> OdsDataAttributes { get; set; }
         public DbSet<PerformanceMetric> PerformanceMetrics { get; set; }
         public DbSet<ReportDataV2> ReportDataV2 { get; set; }
         public DbSet<Role> Roles { get; set; }
@@ -75,6 +76,7 @@ namespace SelfHostedWebApiDataService.Models
             modelBuilder.Configurations.Add(new ModelDifferenceAspectMap());
             modelBuilder.Configurations.Add(new ModelDifferenceMap());
             modelBuilder.Configurations.Add(new ModuleInfoMap());
+            modelBuilder.Configurations.Add(new OdsDataAttributeMap());
             modelBuilder.Configurations.Add(new PerformanceMetricMap());
             modelBuilder.Configurations.Add(new ReportDataV2Map());
             modelBuilder.Configurations.Add(new RoleMap());

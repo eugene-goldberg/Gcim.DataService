@@ -234,6 +234,7 @@
     <Compile Include="Models\Mapping\ModelDifferenceAspectMap.cs" />
     <Compile Include="Models\Mapping\ModelDifferenceMap.cs" />
     <Compile Include="Models\Mapping\ModuleInfoMap.cs" />
+    <Compile Include="Models\Mapping\OdsDataAttributeMap.cs" />
     <Compile Include="Models\Mapping\PerformanceMetricMap.cs" />
     <Compile Include="Models\Mapping\ReportDataV2Map.cs" />
     <Compile Include="Models\Mapping\RoleMap.cs" />
@@ -252,6 +253,7 @@
     <Compile Include="Models\ModelDifference.cs" />
     <Compile Include="Models\ModelDifferenceAspect.cs" />
     <Compile Include="Models\ModuleInfo.cs" />
+    <Compile Include="Models\OdsDataAttribute.cs" />
     <Compile Include="Models\PerformanceMetric.cs" />
     <Compile Include="Models\ReportDataV2.cs" />
     <Compile Include="Models\Role.cs" />
