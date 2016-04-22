@@ -13,7 +13,7 @@ namespace SelfHostedWebApiDataService
 
         public void Start()
         {
-            _webapp = WebApp.Start<SelfHostedWebApiDataService.Startup>("http://*:8080");
+            _webapp = WebApp.Start<SelfHostedWebApiDataService.Startup>("http://*:8888");
         }
 
         public void Stop()

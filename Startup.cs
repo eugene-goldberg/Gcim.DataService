@@ -8,8 +8,8 @@ using Owin;
 using Nancy;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
-using SelfHostedWebApiDataService.Models;
 using System.Web.Http.Cors;
+using CommonDataService.Models;
 
 namespace SelfHostedWebApiDataService
 {
@@ -32,29 +32,8 @@ namespace SelfHostedWebApiDataService
             );
 
             ODataModelBuilder builder = new ODataConventionModelBuilder();
-            builder.EntitySet<SubjectArea>("SubjectArea");
-            builder.EntitySet<UdmFact>("UdmFact");
-            builder.EntitySet<UdmMeasure>("UdmMeasure");
-            builder.EntitySet<UdmDimension>("UdmDimension");
-            builder.EntitySet<BusinessEntity>("BusinessEntity");
-            builder.EntitySet<ChangeRecord>("ChangeRecord");
-            builder.EntitySet<AnalyticalMethod>("AnalyticalMethod");
-            builder.EntitySet<BusinessFunction>("BusinessFunction");
-            builder.EntitySet<BusinessGoal>("BusinessGoal");
-            builder.EntitySet<BusinessInitiative>("BusinessInitiative");
-            builder.EntitySet<BusinessQuestion>("BusinessQuestion");
-            builder.EntitySet<UdmDataAttribute>("UdmDataAttribute");
-            builder.EntitySet<DataDeliveryChannel>("DataDeliveryChannel");
-            builder.EntitySet<DataEntity>("DataEntity");
-            builder.EntitySet<DataLoadMap>("DataLoadMap");
-            builder.EntitySet<DataSource>("DataSource");
-            builder.EntitySet<Employee>("Employee");
-            builder.EntitySet<Governance>("Governance");
-            builder.EntitySet<InformationProduct>("InformationProduct");
-            builder.EntitySet<MasterData>("MasterData");
-            builder.EntitySet<PerformanceMetric>("PerformanceMetric");
-            builder.EntitySet<SourceTool>("SourceTool");
-            builder.EntitySet<Udm>("Udm");
+            builder.EntitySet<ChangeMeasure>("ChangeMeasure");
+            
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: null,
@@ -65,7 +44,7 @@ namespace SelfHostedWebApiDataService
             app.Use(async (context, next) =>
             {
                 // Add Header
-                context.Response.Headers["Product"] = "Web Api Self Host";
+                context.Response.Headers["Product"] = "Common Data Service";
 
                 // Call next middleware
                 await next.Invoke();

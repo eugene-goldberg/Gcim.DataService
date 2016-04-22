@@ -15,7 +15,7 @@ namespace SelfHostedWebApiDataService
 
         protected override void OnStart(string[] args)
         {
-            _webapp = WebApp.Start<SelfHostedWebApiDataService.Startup>("http://*:8080");
+            _webapp = WebApp.Start<SelfHostedWebApiDataService.Startup>("http://*:8888");
         }
 
         protected override void OnStop()

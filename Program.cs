@@ -27,15 +27,15 @@ namespace SelfHostedWebApiDataService
                 });
                 x.RunAsLocalSystem();
 
-                x.SetDescription("Self-Hosted WebAPI Data API Service");
-                x.SetDisplayName("WebAPI Data Service");
-                x.SetServiceName("WebApiDataApiService");
+                x.SetDescription("Common Data Service");
+                x.SetDisplayName("Common Data Service");
+                x.SetServiceName("GommonDataService");
             });
         }
 
         static void StartConsole()
         {
-            using (WebApp.Start<SelfHostedWebApiDataService.Startup>("http://*:8080"))
+            using (WebApp.Start<SelfHostedWebApiDataService.Startup>("http://*:8888"))
             {
                 Console.WriteLine("Web Server is running.");
                 Console.WriteLine("Press any key to quit.");

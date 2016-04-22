@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2E9F373-300F-401F-8C3F-C58D57392655}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommonDataService</RootNamespace>
+    <AssemblyName>CommonDataService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Data.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Persistent.Base.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Persistent.BaseImpl.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Xpo.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Diagnostics, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Diagnostics.3.0.1\lib\net45\Microsoft.Owin.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\Microsoft.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Nancy.1.2.0\lib\net40\Nancy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy.Owin, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Nancy.Owin.1.2.0\lib\net40\Nancy.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.OData, Version=5.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.OData.5.9.0\lib\net45\System.Web.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=3.2.150.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>packages\Topshelf.3.2.0\lib\net40-full\Topshelf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\ChangeMeasureController.cs" />
+    <Compile Include="CustomContentTypeProvider.cs" />
+    <Compile Include="CustomMiddleware.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\AccountAlia.cs" />
+    <Compile Include="Models\AccountProgram.cs" />
+    <Compile Include="Models\AccountRolePerson.cs" />
+    <Compile Include="Models\ChangeMeasure.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Industry.cs" />
+    <Compile Include="Models\MALContext.cs" />
+    <Compile Include="Models\Mapping\AccountAliaMap.cs" />
+    <Compile Include="Models\Mapping\AccountMap.cs" />
+    <Compile Include="Models\Mapping\AccountProgramMap.cs" />
+    <Compile Include="Models\Mapping\AccountRolePersonMap.cs" />
+    <Compile Include="Models\Mapping\ChangeMeasureMap.cs" />
+    <Compile Include="Models\Mapping\CountryMap.cs" />
+    <Compile Include="Models\Mapping\IndustryMap.cs" />
+    <Compile Include="Models\Mapping\OfferingMap.cs" />
+    <Compile Include="Models\Mapping\PersonMap.cs" />
+    <Compile Include="Models\Mapping\ProgramMap.cs" />
+    <Compile Include="Models\Mapping\RegionAliaMap.cs" />
+    <Compile Include="Models\Mapping\RegionMap.cs" />
+    <Compile Include="Models\Mapping\RoleMap.cs" />
+    <Compile Include="Models\Mapping\ServiceMap.cs" />
+    <Compile Include="Models\Mapping\ToolMap.cs" />
+    <Compile Include="Models\Offering.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Program.cs" />
+    <Compile Include="Models\Region.cs" />
+    <Compile Include="Models\RegionAlia.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\Tool.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelfHostServiceBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SelfHostServiceBase.Designer.cs">
+      <DependentUpon>SelfHostServiceBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="TestController.cs" />
+    <Compile Include="TopshelfService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Assets\data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="packages\Digitrish.PocoFromDB.1.0.0.3\Digitrish.PocoFromDB.1.0.0.3.nupkg" />
+    <None Include="packages\Digitrish.PocoFromDB.1.0.0.3\tools\install.ps1" />
+    <None Include="packages\Digitrish.PocoFromDB.1.0.0.3\tools\PocoFromDB\CommonFunctions.cs.t4" />
+    <None Include="packages\Digitrish.PocoFromDB.1.0.0.3\tools\PocoFromDB\Context.cs.t4" />
+    <None Include="packages\Digitrish.PocoFromDB.1.0.0.3\tools\PocoFromDB\DbContextEntityMember.cs.t4" />
+    <None Include="packages\Digitrish.PocoFromDB.1.0.0.3\tools\PocoFromDB\DbContextOnModelCreating.cs.t4" />
+    <None Include="packages\Digitrish.PocoFromDB.1.0.0.3\tools\PocoFromDB\Entity.cs.t4" />
+    <None Include="packages\Digitrish.PocoFromDB.1.0.0.3\tools\PocoFromDB\Mapping.cs.t4" />
+    <None Include="packages\Digitrish.PocoFromDB.1.0.0.3\tools\PocoFromDB\PocoFromDB.ps1" />
+    <None Include="packages\Digitrish.PocoFromDB.1.0.0.3\tools\PocoFromDB\Repository.cs.t4" />
+    <None Include="packages\EntityFramework.6.1.3\content\App.config.transform" />
+    <None Include="packages\EntityFramework.6.1.3\content\Web.config.transform" />
+    <None Include="packages\EntityFramework.6.1.3\EntityFramework.6.1.3.nupkg" />
+    <None Include="packages\EntityFramework.6.1.3\tools\EntityFramework.psd1" />
+    <None Include="packages\EntityFramework.6.1.3\tools\EntityFramework.psm1" />
+    <None Include="packages\EntityFramework.6.1.3\tools\init.ps1" />
+    <None Include="packages\EntityFramework.6.1.3\tools\install.ps1" />
+    <None Include="packages\Microsoft.AspNet.Cors.5.2.3\Microsoft.AspNet.Cors.5.2.3.nupkg" />
+    <None Include="packages\Microsoft.AspNet.OData.5.9.0\Microsoft.AspNet.OData.5.9.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Client.5.2.3\Microsoft.AspNet.WebApi.Client.5.2.3.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Core.5.2.3\Content\web.config.transform" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Core.5.2.3\Microsoft.AspNet.WebApi.Core.5.2.3.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Cors.5.2.3\Microsoft.AspNet.WebApi.Cors.5.2.3.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Owin.5.2.3\Microsoft.AspNet.WebApi.Owin.5.2.3.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.OwinSelfHost.5.2.3\Microsoft.AspNet.WebApi.OwinSelfHost.5.2.3.nupkg" />
+    <None Include="packages\Microsoft.OData.Core.6.15.0\Microsoft.OData.Core.6.15.0.nupkg" />
+    <None Include="packages\Microsoft.OData.Edm.6.15.0\Microsoft.OData.Edm.6.15.0.nupkg" />
+    <None Include="packages\Microsoft.Owin.3.0.1\Microsoft.Owin.3.0.1.nupkg" />
+    <None Include="packages\Microsoft.Owin.Diagnostics.3.0.1\Microsoft.Owin.Diagnostics.3.0.1.nupkg" />
+    <None Include="packages\Microsoft.Owin.FileSystems.3.0.1\Microsoft.Owin.FileSystems.3.0.1.nupkg" />
+    <None Include="packages\Microsoft.Owin.Host.HttpListener.3.0.1\Microsoft.Owin.Host.HttpListener.3.0.1.nupkg" />
+    <None Include="packages\Microsoft.Owin.Hosting.3.0.1\Microsoft.Owin.Hosting.3.0.1.nupkg" />
+    <None Include="packages\Microsoft.Owin.SelfHost.3.0.1\Microsoft.Owin.SelfHost.3.0.1.nupkg" />
+    <None Include="packages\Microsoft.Owin.StaticFiles.3.0.1\Microsoft.Owin.StaticFiles.3.0.1.nupkg" />
+    <None Include="packages\Microsoft.Spatial.6.15.0\Microsoft.Spatial.6.15.0.nupkg" />
+    <None Include="packages\Nancy.1.2.0\Nancy.1.2.0.nupkg" />
+    <None Include="packages\Nancy.Owin.1.2.0\Nancy.Owin.1.2.0.nupkg" />
+    <None Include="packages\Newtonsoft.Json.6.0.4\Newtonsoft.Json.6.0.4.nupkg" />
+    <None Include="packages\Newtonsoft.Json.6.0.4\tools\install.ps1" />
+    <None Include="packages\Owin.1.0\Owin.1.0.nupkg" />
+    <None Include="packages\repositories.config" />
+    <None Include="packages\T4Scaffolding.1.0.8\T4Scaffolding.1.0.8.nupkg" />
+    <None Include="packages\T4Scaffolding.1.0.8\tools\EFDbContext\DbContext.cs.t4" />
+    <None Include="packages\T4Scaffolding.1.0.8\tools\EFDbContext\DbContext.vb.t4" />
+    <None Include="packages\T4Scaffolding.1.0.8\tools\EFDbContext\DbContextEntityMember.cs.t4" />
+    <None Include="packages\T4Scaffolding.1.0.8\tools\EFDbContext\DbContextEntityMember.vb.t4" />
+    <None Include="packages\T4Scaffolding.1.0.8\tools\EFDbContext\T4Scaffolding.EFDbContext.ps1" />
+    <None Include="packages\T4Scaffolding.1.0.8\tools\EFRepository\Repository.cs.t4" />
+    <None Include="packages\T4Scaffolding.1.0.8\tools\EFRepository\Repository.vb.t4" />
+    <None Include="packages\T4Scaffolding.1.0.8\tools\EFRepository\T4Scaffolding.EFRepository.ps1" />
+    <None Include="packages\T4Scaffolding.1.0.8\tools\init.ps1" />
+    <None Include="packages\T4Scaffolding.1.0.8\tools\install.ps1" />
+    <None Include="packages\T4Scaffolding.Core.0.0.1\T4Scaffolding.Core.0.0.1.nupkg" />
+    <None Include="packages\T4Scaffolding.Core.VS2015.1.0.1\T4Scaffolding.Core.VS2015.1.0.1.nupkg" />
+    <None Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\CustomScaffolder\DefaultPs1Script.ps1.t4" />
+    <None Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\CustomScaffolder\DefaultT4Template.cs.t4" />
+    <None Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\CustomScaffolder\DefaultT4Template.vb.t4" />
+    <None Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\CustomScaffolder\T4Scaffolding.CustomScaffolder.ps1" />
+    <None Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\CustomTemplate\T4Scaffolding.CustomTemplate.ps1" />
+    <None Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\init.ps1" />
+    <None Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\install.ps1" />
+    <None Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\scaffoldingTabExpansion.psm1" />
+    <None Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\T4Scaffolding.Format.ps1xml" />
+    <None Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\uninstall.ps1" />
+    <None Include="packages\T4Scaffolding.VS2015.1.0.10\T4Scaffolding.VS2015.1.0.10.nupkg" />
+    <None Include="packages\T4Scaffolding.VS2015.1.0.10\tools\EFDbContext\DbContext.cs.t4" />
+    <None Include="packages\T4Scaffolding.VS2015.1.0.10\tools\EFDbContext\DbContext.vb.t4" />
+    <None Include="packages\T4Scaffolding.VS2015.1.0.10\tools\EFDbContext\DbContextEntityMember.cs.t4" />
+    <None Include="packages\T4Scaffolding.VS2015.1.0.10\tools\EFDbContext\DbContextEntityMember.vb.t4" />
+    <None Include="packages\T4Scaffolding.VS2015.1.0.10\tools\EFDbContext\T4Scaffolding.EFDbContext.ps1" />
+    <None Include="packages\T4Scaffolding.VS2015.1.0.10\tools\EFRepository\Repository.cs.t4" />
+    <None Include="packages\T4Scaffolding.VS2015.1.0.10\tools\EFRepository\Repository.vb.t4" />
+    <None Include="packages\T4Scaffolding.VS2015.1.0.10\tools\EFRepository\T4Scaffolding.EFRepository.ps1" />
+    <None Include="packages\T4Scaffolding.VS2015.1.0.10\tools\init.ps1" />
+    <None Include="packages\T4Scaffolding.VS2015.1.0.10\tools\install.ps1" />
+    <None Include="packages\Topshelf.3.2.0\Topshelf.3.2.0.nupkg" />
+    <None Include="scaffolding.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\testfile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="packages\Digitrish.PocoFromDB.1.0.0.3\content\InstallationDummyFile.txt" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\about_EntityFramework.help.txt" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\EntityFramework.PowerShell.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\EntityFramework.PowerShell.Utility.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\migrate.exe" />
+    <Content Include="packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll" />
+    <Content Include="packages\Microsoft.AspNet.OData.5.9.0\lib\net45\System.Web.OData.dll" />
+    <Content Include="packages\Microsoft.AspNet.OData.5.9.0\lib\net45\System.Web.OData.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.xml" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnx451\de\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnx451\es\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnx451\fr\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnx451\it\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnx451\ja\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnx451\ko\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnx451\Microsoft.OData.Core.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnx451\Microsoft.OData.Core.xml" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnx451\ru\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnx451\zh-Hans\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnx451\zh-Hant\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnxcore50\de\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnxcore50\es\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnxcore50\fr\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnxcore50\it\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnxcore50\ja\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnxcore50\ko\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnxcore50\Microsoft.OData.Core.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnxcore50\Microsoft.OData.Core.xml" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnxcore50\ru\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnxcore50\zh-Hans\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\dnxcore50\zh-Hant\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\es\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\fr\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\it\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\ja\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\ko\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Core.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Core.xml" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\ru\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\de\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\es\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\fr\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\it\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\ja\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\ko\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Core.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Core.xml" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\ru\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\zh-Hans\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\zh-Hant\Microsoft.OData.Core.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnx451\de\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnx451\es\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnx451\fr\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnx451\it\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnx451\ja\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnx451\ko\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnx451\Microsoft.OData.Edm.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnx451\Microsoft.OData.Edm.xml" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnx451\ru\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnx451\zh-Hans\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnx451\zh-Hant\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnxcore50\de\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnxcore50\es\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnxcore50\fr\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnxcore50\it\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnxcore50\ja\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnxcore50\ko\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnxcore50\Microsoft.OData.Edm.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnxcore50\Microsoft.OData.Edm.xml" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnxcore50\ru\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnxcore50\zh-Hans\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\dnxcore50\zh-Hant\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\es\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\fr\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\it\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\ja\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\ko\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Edm.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Edm.xml" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\ru\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\de\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\es\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\fr\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\it\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\ja\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\ko\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Edm.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Edm.xml" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\ru\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\zh-Hans\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\zh-Hant\Microsoft.OData.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll" />
+    <Content Include="packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.XML" />
+    <Content Include="packages\Microsoft.Owin.Diagnostics.3.0.1\lib\net45\Microsoft.Owin.Diagnostics.dll" />
+    <Content Include="packages\Microsoft.Owin.Diagnostics.3.0.1\lib\net45\Microsoft.Owin.Diagnostics.XML" />
+    <Content Include="packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45\Microsoft.Owin.FileSystems.dll" />
+    <Content Include="packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45\Microsoft.Owin.FileSystems.XML" />
+    <Content Include="packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.dll" />
+    <Content Include="packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.xml" />
+    <Content Include="packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll" />
+    <Content Include="packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.XML" />
+    <Content Include="packages\Microsoft.Owin.SelfHost.3.0.1\ReadMe.txt" />
+    <Content Include="packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll" />
+    <Content Include="packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.XML" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnx451\de\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnx451\es\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnx451\fr\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnx451\it\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnx451\ja\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnx451\ko\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnx451\Microsoft.Spatial.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnx451\Microsoft.Spatial.xml" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnx451\ru\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnx451\zh-Hans\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnx451\zh-Hant\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnxcore50\de\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnxcore50\es\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnxcore50\fr\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnxcore50\it\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnxcore50\ja\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnxcore50\ko\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnxcore50\Microsoft.Spatial.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnxcore50\Microsoft.Spatial.xml" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnxcore50\ru\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnxcore50\zh-Hans\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\dnxcore50\zh-Hant\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\es\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\fr\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\it\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\ja\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\ko\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Spatial.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Spatial.xml" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\ru\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\de\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\es\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\fr\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\it\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\ja\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\ko\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\Microsoft.Spatial.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\Microsoft.Spatial.xml" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\ru\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\zh-Hans\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\zh-Hant\Microsoft.Spatial.resources.dll" />
+    <Content Include="packages\Nancy.1.2.0\lib\net40\Nancy.dll" />
+    <Content Include="packages\Nancy.1.2.0\lib\net40\Nancy.xml" />
+    <Content Include="packages\Nancy.Owin.1.2.0\lib\net40\Nancy.Owin.dll" />
+    <Content Include="packages\Nancy.Owin.1.2.0\lib\net40\Nancy.Owin.XML" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net20\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net35\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net40\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\Owin.1.0\lib\net40\Owin.dll" />
+    <Content Include="packages\T4Scaffolding.1.0.8\content\InstallationDummyFile.txt" />
+    <Content Include="packages\T4Scaffolding.Core.0.0.1\content\NewFile.txt" />
+    <Content Include="packages\T4Scaffolding.Core.VS2015.1.0.1\content\InstallationDummyFile.txt" />
+    <Content Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\T4Scaffolding.dll" />
+    <Content Include="packages\T4Scaffolding.Core.VS2015.1.0.1\tools\T4Scaffolding.NuGetServices.dll" />
+    <Content Include="packages\T4Scaffolding.VS2015.1.0.10\content\InstallationDummyFile.txt" />
+    <Content Include="packages\Topshelf.3.2.0\lib\net35\Topshelf.dll" />
+    <Content Include="packages\Topshelf.3.2.0\lib\net40-full\Topshelf.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
