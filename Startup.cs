@@ -44,6 +44,7 @@ namespace SelfHostedWebApiDataService
             builder.EntitySet<BusinessInitiative>("BusinessInitiative");
             builder.EntitySet<BusinessQuestion>("BusinessQuestion");
             builder.EntitySet<UdmDataAttribute>("UdmDataAttribute");
+            builder.EntitySet<OdsDataAttribute>("OdsDataAttribute");
             builder.EntitySet<DataDeliveryChannel>("DataDeliveryChannel");
             builder.EntitySet<DataEntity>("DataEntity");
             builder.EntitySet<DataLoadMap>("DataLoadMap");
@@ -65,7 +66,7 @@ namespace SelfHostedWebApiDataService
             app.Use(async (context, next) =>
             {
                 // Add Header
-                context.Response.Headers["Product"] = "Web Api Self Host";
+                context.Response.Headers["Product"] = "GCIM Data Service";
 
                 // Call next middleware
                 await next.Invoke();

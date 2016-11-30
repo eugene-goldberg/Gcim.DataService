@@ -27,9 +27,9 @@ namespace SelfHostedWebApiDataService
                 });
                 x.RunAsLocalSystem();
 
-                x.SetDescription("Self-Hosted WebAPI Data API Service");
-                x.SetDisplayName("WebAPI Data Service");
-                x.SetServiceName("WebApiDataApiService");
+                x.SetDescription("GCIM Data API Service");
+                x.SetDisplayName("GCIM Data Service");
+                x.SetServiceName("GcimDataApiService");
             });
         }
 
